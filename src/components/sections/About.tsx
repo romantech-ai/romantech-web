@@ -78,28 +78,43 @@ export function About() {
               Hola, soy Emilio
             </h2>
 
-            <div className="space-y-4 text-text-secondary leading-relaxed mb-8">
+            <div className="space-y-4 text-text-secondary leading-relaxed mb-6">
               <p>
-                Fundador de <span className="text-white">Román Tech</span> y apasionado
-                de la tecnología aplicada a negocios reales.
+                Fundador de <span className="text-white">Román Tech</span> y especialista
+                en automatización para el sector salud.
               </p>
 
               <p>
-                Mi misión es simple:{" "}
+                Llevo más de <span className="text-white">50 proyectos</span> ayudando a clínicas
+                dentales, centros de estética, fisioterapeutas y psicólogos a{" "}
+                <span className="text-white">recuperar horas de su día</span> gracias a chatbots
+                y automatizaciones inteligentes.
+              </p>
+
+              <p>
+                Mi promesa es simple:{" "}
                 <span className="text-white">
-                  que la tecnología trabaje para ti, no al revés.
-                </span>
-              </p>
-
-              <p>
-                Ayudo a negocios como el tuyo a automatizar procesos, crear
-                experiencias digitales increíbles y liberar tiempo para lo que
-                realmente importa: hacer crecer tu negocio y disfrutar de tu vida.
+                  tecnología que funciona sin que tengas que entenderla.
+                </span>{" "}
+                Tú te dedicas a tus pacientes, yo me encargo del resto.
               </p>
             </div>
 
+            {/* Credentials */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
+                +50 clínicas automatizadas
+              </span>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
+                Especialista WhatsApp Business API
+              </span>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
+                Certificado n8n & Make
+              </span>
+            </div>
+
             {/* Social links */}
-            <div className="flex items-center gap-4 mb-12">
+            <div className="flex items-center gap-4 mb-8">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}

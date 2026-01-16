@@ -64,11 +64,23 @@ interface ServiceCardProps {
   description: string;
   features: string[];
   href?: string;
+  ctaText?: string;
+  badge?: string;
 }
 
-export function ServiceCard({ icon, title, description, features, href = "#" }: ServiceCardProps) {
+export function ServiceCard({ icon, title, description, features, href = "#", ctaText = "Saber más", badge }: ServiceCardProps) {
   return (
     <Card className="flex flex-col h-full">
+      {/* Badge */}
+      {badge && (
+        <div className="absolute -top-3 -right-3 z-10">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
+                          bg-accent-cyan text-bg-primary shadow-glow-cyan">
+            {badge}
+          </span>
+        </div>
+      )}
+
       {/* Icon container */}
       <div
         className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20
@@ -98,13 +110,13 @@ export function ServiceCard({ icon, title, description, features, href = "#" }: 
         ))}
       </ul>
 
-      {/* Link */}
+      {/* Link - CTA específico */}
       <a
         href={href}
         className="inline-flex items-center gap-2 text-accent-cyan font-medium
                    group-hover:gap-3 transition-all duration-300"
       >
-        Explorar
+        {ctaText}
         <ArrowRight className="w-4 h-4" />
       </a>
     </Card>

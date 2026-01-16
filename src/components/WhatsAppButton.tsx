@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "34664241328";
-const WHATSAPP_MESSAGE = "Hola! Me interesa saber más sobre los servicios de automatización e IA para mi negocio.";
+const WHATSAPP_MESSAGE = "Hola! Tengo una clínica y me interesa saber más sobre los chatbots de WhatsApp para automatizar citas.";
 
 export function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -30,10 +30,18 @@ export function WhatsAppButton() {
       whileTap={{ scale: 0.95 }}
     >
       <MessageCircle className="w-6 h-6" />
-      <span className="hidden sm:inline">WhatsApp</span>
+      <span className="hidden sm:inline">¿Dudas? Escríbeme</span>
 
       {/* Pulse effect */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
+
+      {/* Tooltip on mobile */}
+      <span className="sm:hidden absolute -top-10 right-0 whitespace-nowrap px-3 py-1 rounded-lg
+                       bg-bg-card border border-white/10 text-white text-xs font-medium
+                       opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                       shadow-lg">
+        ¿Dudas? Escríbeme
+      </span>
     </motion.a>
   );
 }

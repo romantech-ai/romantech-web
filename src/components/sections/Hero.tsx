@@ -1,18 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Bot, Zap, Clock, CheckCircle2 } from "lucide-react";
 import { Container } from "../ui/Container";
 import { LinkButton } from "../ui/Button";
-import { StatCard } from "../ui/Card";
-import { AnimatedText } from "../AnimatedText";
 import { GridBackground } from "../ParticleBackground";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const stats = [
-  { value: "+50", label: "Automatizaciones creadas" },
-  { value: "24/7", label: "Disponibilidad de tus chatbots" },
-  { value: "<1 sem", label: "Entrega promedio" },
+  {
+    value: "+50",
+    label: "Clínicas automatizadas",
+    icon: <CheckCircle2 className="w-5 h-5" />
+  },
+  {
+    value: "24/7",
+    label: "Atención sin descanso",
+    icon: <Bot className="w-5 h-5" />
+  },
+  {
+    value: "<7 días",
+    label: "Tu chatbot funcionando",
+    icon: <Zap className="w-5 h-5" />
+  },
 ];
 
 export function Hero() {
@@ -29,37 +39,35 @@ export function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Badge */}
+          {/* Badge - Específico para clínicas */}
           <motion.div variants={fadeUp} className="mb-8">
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                         bg-white/5 border border-white/10 text-sm text-text-secondary"
+                         bg-accent-cyan/10 border border-accent-cyan/20 text-sm text-accent-cyan font-medium"
             >
               <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-              Agencia de IA & Automatización
+              Especialistas en clínicas y centros de salud
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline - Específico y orientado a beneficio */}
           <motion.h1
             variants={fadeUp}
             className="text-hero font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
-            La IA que tu negocio{" "}
-            <AnimatedText
-              words={["necesita", "merece", "impulsa", "escala", "transforma"]}
-              className="min-w-[200px] md:min-w-[280px]"
-            />
+            Tu clínica atendiendo pacientes{" "}
+            <span className="text-gradient">24/7</span>
+            <br />
+            <span className="text-text-secondary text-[0.65em]">sin contratar más personal</span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - Beneficio concreto */}
           <motion.p
             variants={fadeUp}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-            Diseño chatbots, automatizaciones y webs que trabajan por ti mientras
-            tú descansas.{" "}
-            <span className="text-white">Sin complicaciones técnicas.</span>
+            Chatbots de WhatsApp que agendan citas, responden dudas y captan pacientes{" "}
+            <span className="text-white font-medium">mientras tú te dedicas a lo importante.</span>
           </motion.p>
 
           {/* CTAs */}
@@ -74,23 +82,43 @@ export function Hero() {
               withArrow
               external
             >
-              Agenda tu demo gratis
+              Ver demo para clínicas
             </LinkButton>
             <LinkButton href="#proceso" variant="secondary" size="lg">
-              Ver cómo funciona
+              Cómo funciona
             </LinkButton>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats - Mejorados con iconos */}
           <motion.div variants={fadeUp}>
             <div className="border-t border-b border-white/5 py-8">
-              <div className="grid grid-cols-3 gap-8 md:gap-16">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
                 {stats.map((stat, index) => (
-                  <StatCard key={index} value={stat.value} label={stat.label} />
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 + index * 0.1 }}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-accent-cyan">{stat.icon}</span>
+                      <span className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</span>
+                    </div>
+                    <span className="text-text-secondary text-sm">{stat.label}</span>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </motion.div>
+
+          {/* Trust signal */}
+          <motion.p
+            variants={fadeUp}
+            className="mt-8 text-text-tertiary text-sm"
+          >
+            Clínicas dentales, estéticas, fisioterapia, psicología y más ya automatizan con nosotros
+          </motion.p>
         </motion.div>
       </Container>
 

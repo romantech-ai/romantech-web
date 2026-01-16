@@ -241,3 +241,16 @@ body {
 .section-gradient {
   background: radial-gradient(ellipse at center, rgba(0, 180, 216, 0.03) 0%, transparent 70%);
 }
+
+/* === SAFE AREA FOR MOBILE DEVICES === */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* === MOBILE STICKY CTA PADDING === */
+@media (max-width: 767px) {
+  /* Add padding to footer when sticky CTA is visible */
+  footer {
+    padding-bottom: 80px;
+  }
+}

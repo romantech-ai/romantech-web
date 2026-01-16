@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefreshCw, Phone, Clock } from "lucide-react";
+import { PhoneOff, UserX, CalendarX } from "lucide-react";
 import { Container, Section, SectionHeader } from "../ui/Container";
 import { ProblemCard } from "../ui/Card";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const problems = [
   {
-    icon: <RefreshCw className="w-8 h-8" />,
-    title: "Respondes lo mismo una y otra vez",
+    icon: <PhoneOff className="w-8 h-8" />,
+    title: "Tu recepción no da abasto",
     description:
-      "Los mismos mensajes, las mismas preguntas, día tras día. Tu tiempo vale más que eso.",
+      "El teléfono no para, los WhatsApps se acumulan. Tu equipo pierde horas contestando las mismas preguntas.",
   },
   {
-    icon: <Phone className="w-8 h-8" />,
-    title: "Pierdes clientes por tardar en responder",
+    icon: <UserX className="w-8 h-8" />,
+    title: "Pacientes que no llegan",
     description:
-      "Mientras duermes o estás ocupado, potenciales clientes se van con la competencia.",
+      "Olvidos, confusiones de horario, cancelaciones de última hora. Huecos en tu agenda que cuestan dinero.",
   },
   {
-    icon: <Clock className="w-8 h-8" />,
-    title: "Horas en tareas que podrían automatizarse",
+    icon: <CalendarX className="w-8 h-8" />,
+    title: "Citas perdidas fuera de horario",
     description:
-      "Copiar datos, enviar emails, actualizar hojas de cálculo... Todo eso puede hacerse solo.",
+      "A las 11pm alguien quiere pedir cita. Tu clínica está cerrada. Mañana ya habrá ido a la competencia.",
   },
 ];
 
@@ -39,8 +39,8 @@ export function Problems() {
         >
           <motion.div variants={fadeUp}>
             <SectionHeader
-              title="¿Te suena familiar?"
-              subtitle="Si algo de esto te pasa, no estás solo. La buena noticia: tiene solución."
+              title="¿Tu clínica sufre alguno de estos problemas?"
+              subtitle="Son más comunes de lo que crees. Y tienen solución."
             />
           </motion.div>
 
@@ -61,7 +61,7 @@ export function Problems() {
 
           <motion.div variants={fadeUp} className="text-center mt-12">
             <p className="text-xl text-white font-medium mb-2">
-              Hay una forma mejor.
+              La solución existe y es más sencilla de lo que piensas.
             </p>
             <motion.div
               animate={{ y: [0, 5, 0] }}

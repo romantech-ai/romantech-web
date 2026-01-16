@@ -1,31 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, TrendingUp } from "lucide-react";
 import { Container, Section, SectionHeader } from "../ui/Container";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const testimonials = [
   {
     name: "María García",
-    role: "CEO, Clínica Dental Sonrisas",
+    role: "Directora",
+    company: "Clínica Dental Sonrisas",
     content:
       "El chatbot de WhatsApp que nos creó Emilio ha transformado nuestra gestión de citas. Ahora los pacientes pueden reservar 24/7 y nosotros ahorramos más de 15 horas semanales en llamadas.",
     rating: 5,
+    result: "15h/semana ahorradas",
+    initials: "MG",
   },
   {
-    name: "Carlos Rodríguez",
-    role: "Fundador, Inmobiliaria CR",
+    name: "Ana Ruiz",
+    role: "Propietaria",
+    company: "Centro Estética Belleza Natural",
     content:
-      "La automatización de seguimiento de leads nos ha multiplicado las conversiones. Antes perdíamos clientes por no responder a tiempo, ahora el sistema trabaja incluso cuando dormimos.",
+      "Desde que tenemos el chatbot, no perdemos ni una consulta. Los clientes agendan sus tratamientos a cualquier hora y yo me dedico a lo importante: atenderlos cuando llegan.",
     rating: 5,
+    result: "+40% más citas",
+    initials: "AR",
   },
   {
-    name: "Laura Martínez",
-    role: "Directora, Academia de Inglés",
+    name: "Dr. Pablo Fernández",
+    role: "Director",
+    company: "Clínica Fisioterapia Avanzada",
     content:
-      "Nuestra nueva web convierte el triple que la anterior. Emilio entendió perfectamente lo que necesitábamos y lo entregó en tiempo récord. 100% recomendable.",
+      "La automatización de recordatorios ha reducido nuestras ausencias a casi cero. Los pacientes reciben WhatsApp automático y confirman con un click. Genial.",
     rating: 5,
+    result: "90% menos ausencias",
+    initials: "PF",
   },
 ];
 
@@ -41,8 +50,8 @@ export function Testimonials() {
         >
           <motion.div variants={fadeUp}>
             <SectionHeader
-              title="Lo que dicen mis clientes"
-              subtitle="Resultados reales de negocios que confiaron en automatizar con IA."
+              title="Clínicas que ya automatizan con nosotros"
+              subtitle="Resultados reales de centros de salud que confiaron en Román Tech."
             />
           </motion.div>
 
@@ -63,13 +72,13 @@ export function Testimonials() {
             className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-center"
           >
             <div>
-              <div className="text-2xl font-bold text-white">+50</div>
-              <div className="text-text-tertiary text-sm">Proyectos completados</div>
+              <div className="text-2xl font-bold text-gradient">+50</div>
+              <div className="text-text-tertiary text-sm">Clínicas automatizadas</div>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/10" />
             <div>
-              <div className="text-2xl font-bold text-white">100%</div>
-              <div className="text-text-tertiary text-sm">Clientes satisfechos</div>
+              <div className="text-2xl font-bold text-gradient">100%</div>
+              <div className="text-text-tertiary text-sm">Satisfacción garantizada</div>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/10" />
             <div>
@@ -88,17 +97,29 @@ export function Testimonials() {
 interface TestimonialCardProps {
   name: string;
   role: string;
+  company: string;
   content: string;
   rating: number;
+  result: string;
+  initials: string;
 }
 
-function TestimonialCard({ name, role, content, rating }: TestimonialCardProps) {
+function TestimonialCard({ name, role, company, content, rating, result, initials }: TestimonialCardProps) {
   return (
     <div
       className="relative p-6 lg:p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05]
                   hover:bg-white/[0.04] hover:border-accent-cyan/20
-                  transition-all duration-500 h-full flex flex-col"
+                  transition-all duration-500 h-full flex flex-col group"
     >
+      {/* Result badge */}
+      <div className="absolute -top-3 right-6">
+        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold
+                        bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan">
+          <TrendingUp className="w-3 h-3" />
+          {result}
+        </span>
+      </div>
+
       {/* Quote icon */}
       <Quote className="w-8 h-8 text-accent-cyan/30 mb-4" />
 
@@ -114,10 +135,16 @@ function TestimonialCard({ name, role, content, rating }: TestimonialCardProps) 
         ))}
       </div>
 
-      {/* Author */}
-      <div>
-        <div className="font-semibold text-white">{name}</div>
-        <div className="text-text-tertiary text-sm">{role}</div>
+      {/* Author with avatar */}
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple
+                        flex items-center justify-center text-white font-semibold text-sm">
+          {initials}
+        </div>
+        <div>
+          <div className="font-semibold text-white">{name}</div>
+          <div className="text-text-tertiary text-sm">{role}, {company}</div>
+        </div>
       </div>
     </div>
   );

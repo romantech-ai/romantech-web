@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import {
   Hero,
   Problems,
@@ -30,6 +31,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <MobileStickyCTA />
     </>
   );
 }

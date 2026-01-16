@@ -1,29 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MessageSquare, PenTool, Rocket } from "lucide-react";
 import { Container, Section, SectionHeader } from "../ui/Container";
-import { ProcessCard } from "../ui/Card";
 import { LinkButton } from "../ui/Button";
 import { fadeUp, staggerContainer } from "@/lib/animations";
+import { ReactNode } from "react";
 
 const steps = [
   {
     number: "01",
     title: "Hablamos",
     description:
-      "Me cuentas qué necesita tu negocio en una llamada de 30 minutos. Sin compromiso, sin presión.",
+      "Me cuentas qué necesita tu clínica en una llamada de 30 minutos. Sin compromiso, sin presión.",
+    icon: <MessageSquare className="w-6 h-6" />,
   },
   {
     number: "02",
     title: "Diseño",
     description:
-      "Creo la solución perfecta para ti: chatbot, web o automatización. Tú apruebas antes de empezar.",
+      "Creo la solución perfecta para ti: chatbot, automatizaciones o web. Tú apruebas antes de empezar.",
+    icon: <PenTool className="w-6 h-6" />,
   },
   {
     number: "03",
     title: "Lanzamos",
     description:
-      "Implementamos, formamos a tu equipo y te acompañamos. Soporte continuo incluido.",
+      "Implementamos en menos de 7 días, formamos a tu equipo y te acompañamos. Soporte incluido.",
+    icon: <Rocket className="w-6 h-6" />,
   },
 ];
 
@@ -39,8 +43,8 @@ export function Process() {
         >
           <motion.div variants={fadeUp}>
             <SectionHeader
-              title="De la idea a la automatización en 3 pasos"
-              subtitle="Simple. Rápido. Sin complicaciones."
+              title="Tu chatbot funcionando en 3 simples pasos"
+              subtitle="Sin tecnicismos. Sin complicaciones. Tú te dedicas a tus pacientes."
             />
           </motion.div>
 
@@ -62,10 +66,11 @@ export function Process() {
 
             {steps.map((step, index) => (
               <motion.div key={index} variants={fadeUp}>
-                <ProcessCard
+                <ProcessCardWithIcon
                   number={step.number}
                   title={step.title}
                   description={step.description}
+                  icon={step.icon}
                   isLast={index === steps.length - 1}
                 />
               </motion.div>
@@ -113,11 +118,53 @@ export function Process() {
               withArrow
               external
             >
-              Empezar con el paso 1
+              Agendar llamada gratuita
             </LinkButton>
+            <p className="mt-4 text-text-tertiary text-sm">
+              30 minutos · Sin compromiso · 100% personalizado
+            </p>
           </motion.div>
         </motion.div>
       </Container>
     </Section>
+  );
+}
+
+// Process card with icon
+interface ProcessCardWithIconProps {
+  number: string;
+  title: string;
+  description: string;
+  icon: ReactNode;
+  isLast?: boolean;
+}
+
+function ProcessCardWithIcon({ number, title, description, icon, isLast = false }: ProcessCardWithIconProps) {
+  return (
+    <div className="relative flex flex-col items-center text-center">
+      {/* Number with icon */}
+      <div
+        className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20
+                    flex flex-col items-center justify-center mb-6 border border-white/10
+                    shadow-[0_0_30px_rgba(0,212,255,0.2)]"
+      >
+        <span className="text-2xl font-bold text-gradient">{number}</span>
+        <span className="absolute -bottom-3 p-1.5 rounded-lg bg-bg-void border border-white/10 text-accent-cyan">
+          {icon}
+        </span>
+      </div>
+
+      {/* Content */}
+      <h3 className="text-xl font-semibold text-white mb-3 mt-2">{title}</h3>
+      <p className="text-text-secondary leading-relaxed max-w-xs">{description}</p>
+
+      {/* Connector line (hidden on last card) */}
+      {!isLast && (
+        <div
+          className="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px
+                      bg-gradient-to-r from-accent-cyan/30 via-accent-purple/30 to-accent-cyan/30"
+        />
+      )}
+    </div>
   );
 }

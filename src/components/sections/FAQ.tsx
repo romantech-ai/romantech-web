@@ -9,39 +9,39 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "¿Cuánto cuesta un proyecto?",
+    question: "¿Cuánto cuesta un chatbot para mi clínica?",
     answer:
-      "Cada proyecto se presupuesta de forma personalizada según tus necesidades. Chatbots desde 500€, webs desde 800€, automatizaciones desde 300€. Agenda una llamada gratuita y te daré un presupuesto cerrado sin compromiso.",
+      "Los chatbots de WhatsApp para clínicas parten desde 500€, dependiendo de las funcionalidades que necesites (agenda citas, responde preguntas frecuentes, envía recordatorios, etc.). En la llamada gratuita te doy un presupuesto cerrado sin sorpresas.",
   },
   {
-    question: "¿Cuánto tiempo tarda en estar listo un proyecto?",
+    question: "¿Cuánto tarda en estar funcionando?",
     answer:
-      "La mayoría de chatbots están operativos en 1-2 semanas. Webs entre 1-3 semanas dependiendo de la complejidad. Siempre acordamos fechas antes de empezar.",
+      "La mayoría de chatbots están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado. Siempre acordamos fechas antes de empezar.",
   },
   {
-    question: "¿Necesito conocimientos técnicos?",
+    question: "¿Necesito saber de tecnología para usarlo?",
     answer:
-      "Para nada. Yo me encargo de toda la parte técnica. Tú solo necesitas saber qué quieres conseguir, y yo lo hago realidad. Te formo para que puedas gestionar lo básico de forma autónoma.",
+      "Para nada. Yo me encargo de todo lo técnico. Tú solo tienes que decirme cómo funciona tu clínica y qué quieres que haga el chatbot. Además, te formo para que puedas modificar respuestas si lo necesitas.",
   },
   {
-    question: "¿Qué garantía tengo de que funcionará?",
+    question: "¿El chatbot puede agendar citas automáticamente?",
     answer:
-      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, ofrezco soporte post-lanzamiento para asegurar que todo va sobre ruedas.",
+      "Sí, el chatbot se integra con tu sistema de gestión o calendario (Google Calendar, Calendly, etc.) para mostrar disponibilidad y agendar citas sin intervención humana. También envía recordatorios automáticos para reducir ausencias.",
   },
   {
-    question: "¿Qué pasa si necesito cambios después?",
+    question: "¿Qué pasa si un paciente pregunta algo que el chatbot no sabe?",
     answer:
-      "Todos los proyectos incluyen un período de ajustes. Además, ofrezco planes de mantenimiento para que tu solución evolucione con tu negocio. Siempre estaré disponible para ayudarte.",
+      "El chatbot está entrenado para responder las preguntas más comunes de tu clínica. Si hay algo que no sabe, avisa a tu equipo por WhatsApp y ellos pueden intervenir. Nunca perderás un lead por falta de respuesta.",
   },
   {
-    question: "¿Cómo es el proceso de trabajo?",
+    question: "¿Funciona con mi software de gestión actual?",
     answer:
-      "Empezamos con una llamada para entender tus necesidades. Luego diseño una propuesta personalizada, la desarrollamos juntos con feedback constante, y finalmente te formo para que puedas sacarle el máximo partido.",
+      "Sí, me integro con la mayoría de software de gestión de clínicas (Clinic Cloud, Doctoralia, Treatwell, etc.) y también con herramientas como Google Sheets, Notion, o cualquier sistema que uses. Lo consultamos en la llamada.",
   },
   {
-    question: "¿Tienes casos de éxito o referencias?",
+    question: "¿Qué garantía tengo?",
     answer:
-      "Sí, he trabajado con más de 50 negocios en diferentes sectores: clínicas, inmobiliarias, academias, ecommerce... Puedo mostrarte proyectos similares al tuyo en nuestra llamada.",
+      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, incluyo 30 días de soporte post-lanzamiento para asegurar que todo va perfecto.",
   },
 ];
 
