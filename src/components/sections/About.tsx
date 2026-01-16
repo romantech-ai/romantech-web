@@ -70,7 +70,7 @@ export function About() {
             className="order-2 lg:order-2"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Hola, soy Emilio 👋
+              Hola, soy Emilio
             </h2>
 
             <div className="space-y-4 text-text-secondary leading-relaxed mb-8">

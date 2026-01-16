@@ -75,14 +75,14 @@ export function CTA() {
                 WhatsApp
               </a>
               <a
-                href="mailto:hola@romantech.es"
+                href="mailto:emilio@romantech.es"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
                            bg-white/5 border border-white/10 text-text-secondary
                            hover:bg-white/10 hover:text-white hover:border-white/20
                            transition-all duration-300"
               >
                 <Mail className="w-5 h-5" />
-                hola@romantech.es
+                emilio@romantech.es
               </a>
             </div>
           </motion.div>

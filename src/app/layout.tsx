@@ -86,7 +86,7 @@ const jsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hola@romantech.es",
+    email: "emilio@romantech.es",
     url: "https://calendly.com/emilio-romantech/demo-del-sistema-30-min",
   },
   sameAs: [

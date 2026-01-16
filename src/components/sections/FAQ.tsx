@@ -9,12 +9,7 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "¿Cuánto cuesta un chatbot para mi negocio?",
-    answer:
-      "Depende de la complejidad y las integraciones que necesites. En nuestra llamada inicial evaluamos tus necesidades y te doy un presupuesto cerrado sin sorpresas. La mayoría de proyectos están entre 500€ y 2000€.",
-  },
-  {
-    question: "¿Cuánto tiempo tarda en estar listo?",
+    question: "¿Cuánto tiempo tarda en estar listo un proyecto?",
     answer:
       "La mayoría de chatbots están operativos en 1-2 semanas. Webs entre 1-3 semanas dependiendo de la complejidad. Siempre acordamos fechas antes de empezar.",
   },
@@ -29,9 +24,14 @@ const faqs = [
       "Todos los proyectos incluyen un período de ajustes. Además, ofrezco planes de mantenimiento para que tu solución evolucione con tu negocio. Siempre estaré disponible para ayudarte.",
   },
   {
-    question: "¿Trabajas con empresas de cualquier sector?",
+    question: "¿Qué tecnologías utilizas?",
     answer:
-      "Sí. He trabajado con clínicas de salud, comercios, agencias de marketing, consultoras, coaches... Si tienes un negocio y quieres automatizar o mejorar tu presencia digital, puedo ayudarte.",
+      "Trabajo con las herramientas más avanzadas del mercado: OpenAI, Claude, n8n, Make, Next.js, React, y más. Siempre elijo la tecnología que mejor se adapta a cada proyecto.",
+  },
+  {
+    question: "¿Cómo es el proceso de trabajo?",
+    answer:
+      "Empezamos con una llamada para entender tus necesidades. Luego diseño una propuesta personalizada, la desarrollamos juntos con feedback constante, y finalmente te formo para que puedas sacarle el máximo partido.",
   },
 ];
 

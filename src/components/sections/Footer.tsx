@@ -11,7 +11,7 @@ const footerLinks = {
     { label: "Consultoría", href: "#servicios" },
   ],
   contact: [
-    { label: "hola@romantech.es", href: "mailto:hola@romantech.es" },
+    { label: "emilio@romantech.es", href: "mailto:emilio@romantech.es" },
     { label: "Calendly", href: "https://calendly.com/emilio-romantech/demo-del-sistema-30-min", external: true },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/romantech/", external: true },
     { label: "GitHub", href: "https://github.com/romantech-ai", external: true },
@@ -36,9 +36,11 @@ export function Footer() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <a href="/" className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">RT</span>
-                </div>
+                <img
+                  src="/logo.png"
+                  alt="Román Tech"
+                  className="h-10 w-auto"
+                />
                 <span className="text-xl font-semibold text-white tracking-tight">
                   Román Tech
                 </span>
@@ -123,7 +125,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 py-6">
           <p className="text-text-tertiary text-sm text-center">
-            © {new Date().getFullYear()} Román Tech. Diseñado con ☕ y bastante IA.
+            © 2026 Román Tech
           </p>
         </div>
       </Container>

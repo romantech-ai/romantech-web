@@ -67,14 +67,11 @@ export function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                {/* Logo mark */}
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-purple
-                                flex items-center justify-center
-                                group-hover:shadow-glow-cyan transition-shadow duration-300">
-                  <span className="text-white font-bold text-lg">RT</span>
-                </div>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Román Tech"
+                className="h-10 w-auto group-hover:opacity-90 transition-opacity duration-300"
+              />
               <span className="text-xl font-semibold text-white tracking-tight hidden sm:block">
                 Román Tech
               </span>
