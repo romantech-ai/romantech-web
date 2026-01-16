@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { Problems } from "./Problems";
+export { Services } from "./Services";
+export { Process } from "./Process";
+export { About } from "./About";
+export { Technologies } from "./Technologies";
+export { FAQ } from "./FAQ";
+export { CTA } from "./CTA";
+export { Footer } from "./Footer";
