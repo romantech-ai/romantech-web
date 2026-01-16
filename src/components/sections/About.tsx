@@ -85,10 +85,10 @@ export function About() {
               </p>
 
               <p>
-                Llevo más de <span className="text-white">50 proyectos</span> ayudando a clínicas
-                dentales, centros de estética, fisioterapeutas y psicólogos a{" "}
-                <span className="text-white">recuperar horas de su día</span> gracias a chatbots
-                y automatizaciones inteligentes.
+                Me especializo en crear{" "}
+                <span className="text-white">chatbots de WhatsApp para clínicas</span> que agendan
+                citas, responden pacientes y captan leads automáticamente. Trabajo con clínicas
+                dentales, centros de estética, fisioterapeutas y psicólogos.
               </p>
 
               <p>
@@ -103,13 +103,13 @@ export function About() {
             {/* Credentials */}
             <div className="flex flex-wrap gap-3 mb-6">
               <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
-                +50 clínicas automatizadas
-              </span>
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
                 Especialista WhatsApp Business API
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
                 Certificado n8n & Make
+              </span>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
+                Garantía de satisfacción
               </span>
             </div>
 

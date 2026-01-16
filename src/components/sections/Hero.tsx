@@ -1,27 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, Bot, Zap, Clock, CheckCircle2 } from "lucide-react";
+import { ChevronDown, Bot, Zap, Clock } from "lucide-react";
 import { Container } from "../ui/Container";
 import { LinkButton } from "../ui/Button";
+import { AnimatedText } from "../AnimatedText";
 import { GridBackground } from "../ParticleBackground";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
+// Tipos de clínicas que rotarán en el headline
+const clinicTypes = [
+  "Clínicas dentales",
+  "Centros de estética",
+  "Fisioterapeutas",
+  "Psicólogos",
+  "Podólogos",
+  "Clínicas veterinarias",
+];
+
 const stats = [
   {
-    value: "+50",
-    label: "Clínicas automatizadas",
-    icon: <CheckCircle2 className="w-5 h-5" />
-  },
-  {
     value: "24/7",
-    label: "Atención sin descanso",
+    label: "Tu clínica atendiendo",
     icon: <Bot className="w-5 h-5" />
   },
   {
     value: "<7 días",
-    label: "Tu chatbot funcionando",
+    label: "Chatbot funcionando",
     icon: <Zap className="w-5 h-5" />
+  },
+  {
+    value: "0€",
+    label: "Coste de la demo",
+    icon: <Clock className="w-5 h-5" />
   },
 ];
 
@@ -39,34 +50,37 @@ export function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Badge - Específico para clínicas */}
+          {/* Badge */}
           <motion.div variants={fadeUp} className="mb-8">
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full
                          bg-accent-cyan/10 border border-accent-cyan/20 text-sm text-accent-cyan font-medium"
             >
               <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-              Especialistas en clínicas y centros de salud
+              Especialista en automatización para clínicas
             </span>
           </motion.div>
 
-          {/* Headline - Específico y orientado a beneficio */}
+          {/* Headline con variantes rotativas */}
           <motion.h1
             variants={fadeUp}
             className="text-hero font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
-            Tu clínica atendiendo pacientes{" "}
-            <span className="text-gradient">24/7</span>
-            <br />
-            <span className="text-text-secondary text-[0.65em]">sin contratar más personal</span>
+            Chatbots de WhatsApp para{" "}
+            <br className="hidden sm:block" />
+            <AnimatedText
+              words={clinicTypes}
+              className="min-w-[280px] md:min-w-[380px]"
+              interval={2500}
+            />
           </motion.h1>
 
-          {/* Subheadline - Beneficio concreto */}
+          {/* Subheadline */}
           <motion.p
             variants={fadeUp}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-            Chatbots de WhatsApp que agendan citas, responden dudas y captan pacientes{" "}
+            Agendo citas, respondo dudas de pacientes y capto leads{" "}
             <span className="text-white font-medium">mientras tú te dedicas a lo importante.</span>
           </motion.p>
 
@@ -82,14 +96,14 @@ export function Hero() {
               withArrow
               external
             >
-              Ver demo para clínicas
+              Ver demo gratis
             </LinkButton>
             <LinkButton href="#proceso" variant="secondary" size="lg">
               Cómo funciona
             </LinkButton>
           </motion.div>
 
-          {/* Stats - Mejorados con iconos */}
+          {/* Stats */}
           <motion.div variants={fadeUp}>
             <div className="border-t border-b border-white/5 py-8">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
@@ -111,14 +125,6 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
-
-          {/* Trust signal */}
-          <motion.p
-            variants={fadeUp}
-            className="mt-8 text-text-tertiary text-sm"
-          >
-            Clínicas dentales, estéticas, fisioterapia, psicología y más ya automatizan con nosotros
-          </motion.p>
         </motion.div>
       </Container>
 

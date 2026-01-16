@@ -7,7 +7,7 @@ import {
   Services,
   Process,
   About,
-  Testimonials,
+  // Testimonials, // TODO: Descomentar cuando tengamos testimonios reales
   Technologies,
   FAQ,
   CTA,
@@ -24,7 +24,7 @@ export default function Home() {
         <Services />
         <Process />
         <About />
-        <Testimonials />
+        {/* <Testimonials /> TODO: Añadir cuando tengamos testimonios reales */}
         <Technologies />
         <FAQ />
         <CTA />
