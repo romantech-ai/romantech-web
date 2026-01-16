@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Hand } from "lucide-react";
 import { Container, Section } from "../ui/Container";
 import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
 
@@ -69,7 +69,8 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="order-2 lg:order-2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
+              <Hand className="w-8 h-8 md:w-10 md:h-10 text-accent-cyan" />
               Hola, soy Emilio
             </h2>
 

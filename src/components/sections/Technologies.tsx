@@ -3,18 +3,30 @@
 import { motion } from "framer-motion";
 import { Container, Section, SectionHeader } from "../ui/Container";
 import { fadeUp } from "@/lib/animations";
+import {
+  Brain,
+  Sparkles,
+  Workflow,
+  Code2,
+  Globe,
+  Rocket,
+  MessageCircle,
+  Zap,
+  FileText,
+  Database,
+} from "lucide-react";
 
 const technologies = [
-  { name: "OpenAI" },
-  { name: "Claude" },
-  { name: "n8n" },
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "Vercel" },
-  { name: "WhatsApp API" },
-  { name: "Make" },
-  { name: "Notion" },
-  { name: "Supabase" },
+  { name: "OpenAI", icon: <Brain className="w-5 h-5" /> },
+  { name: "Claude", icon: <Sparkles className="w-5 h-5" /> },
+  { name: "n8n", icon: <Workflow className="w-5 h-5" /> },
+  { name: "React", icon: <Code2 className="w-5 h-5" /> },
+  { name: "Next.js", icon: <Globe className="w-5 h-5" /> },
+  { name: "Vercel", icon: <Rocket className="w-5 h-5" /> },
+  { name: "WhatsApp API", icon: <MessageCircle className="w-5 h-5" /> },
+  { name: "Make", icon: <Zap className="w-5 h-5" /> },
+  { name: "Notion", icon: <FileText className="w-5 h-5" /> },
+  { name: "Supabase", icon: <Database className="w-5 h-5" /> },
 ];
 
 export function Technologies() {
@@ -50,7 +62,9 @@ export function Technologies() {
                          hover:bg-white/[0.04] hover:border-accent-cyan/20
                          transition-all duration-300 group shrink-0"
             >
-              <div className="w-2 h-2 rounded-full bg-accent-cyan/50 group-hover:bg-accent-cyan transition-colors duration-300" />
+              <span className="text-accent-cyan/70 group-hover:text-accent-cyan transition-colors duration-300">
+                {tech.icon}
+              </span>
               <span className="text-text-secondary group-hover:text-white transition-colors duration-300 whitespace-nowrap font-medium">
                 {tech.name}
               </span>
