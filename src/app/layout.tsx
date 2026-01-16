@@ -162,14 +162,6 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿Cuánto cuesta un chatbot o automatización?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Depende de la complejidad. Los chatbots parten desde 500€ y las automatizaciones desde 300€. En la llamada gratuita analizo tu caso y te doy un presupuesto cerrado sin sorpresas.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "¿Cuánto tarda en estar funcionando?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -186,18 +178,18 @@ const faqJsonLd = {
     },
     {
       "@type": "Question",
-      name: "¿Qué tipo de automatizaciones puedes hacer?",
+      name: "¿Funciona con el software que ya uso?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Chatbots de WhatsApp e Instagram, integración entre herramientas (CRM, email, calendarios), informes automáticos, recordatorios, captación de leads, y mucho más.",
+        text: "Sí, me integro con la mayoría de herramientas: software de gestión de clínicas (Clinic Cloud, Doctoralia, Treatwell, GESDEN), calendarios (Google Calendar, Calendly), CRMs (HubSpot, Pipedrive), y cientos más.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Funciona con las herramientas que ya uso?",
+      name: "¿Qué pasa si alguien pregunta algo que el chatbot no sabe?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, me integro con la mayoría de software: Google Workspace, Notion, Airtable, HubSpot, Calendly, Stripe, y cientos más.",
+        text: "El chatbot está entrenado para responder las preguntas más comunes de tu negocio. Si hay algo que no sabe, te avisa por WhatsApp para que intervengas. Nunca perderás un lead por falta de respuesta.",
       },
     },
   ],

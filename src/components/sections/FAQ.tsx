@@ -9,11 +9,6 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "¿Cuánto cuesta un chatbot o automatización?",
-    answer:
-      "Depende de la complejidad. Los chatbots parten desde 500€ y las automatizaciones desde 300€. En la llamada gratuita analizo tu caso y te doy un presupuesto cerrado sin sorpresas.",
-  },
-  {
     question: "¿Cuánto tarda en estar funcionando?",
     answer:
       "La mayoría de proyectos están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado. Siempre acordamos fechas antes de empezar.",
@@ -29,14 +24,19 @@ const faqs = [
       "Chatbots de WhatsApp e Instagram, integración entre herramientas (CRM, email, calendarios), informes automáticos, recordatorios, captación de leads, y mucho más. Si implica conectar sistemas o eliminar trabajo manual, probablemente puedo ayudarte.",
   },
   {
-    question: "¿Funciona con las herramientas que ya uso?",
+    question: "¿Funciona con el software que ya uso?",
     answer:
-      "Sí, me integro con la mayoría de software: Google Workspace, Notion, Airtable, HubSpot, Calendly, Stripe, y cientos más. Si usas algo específico, lo consultamos en la llamada.",
+      "Sí, me integro con la mayoría de herramientas: software de gestión de clínicas (Clinic Cloud, Doctoralia, Treatwell, GESDEN), calendarios (Google Calendar, Calendly), CRMs (HubSpot, Pipedrive), hojas de cálculo (Google Sheets, Excel), y cientos más.",
+  },
+  {
+    question: "¿Qué pasa si alguien pregunta algo que el chatbot no sabe?",
+    answer:
+      "El chatbot está entrenado para responder las preguntas más comunes de tu negocio. Si hay algo que no sabe o el cliente necesita atención humana, te avisa por WhatsApp para que intervengas. Nunca perderás un lead por falta de respuesta.",
   },
   {
     question: "¿Qué garantía tengo?",
     answer:
-      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, incluyo 30 días de soporte post-lanzamiento.",
+      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, incluyo 30 días de soporte post-lanzamiento para asegurar que todo va perfecto.",
   },
 ];
 
