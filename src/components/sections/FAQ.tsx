@@ -72,6 +72,7 @@ export function FAQ() {
                   answer={faq.answer}
                   isOpen={openIndex === index}
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  id={`faq-${index}`}
                 />
               </motion.div>
             ))}
@@ -87,9 +88,13 @@ interface FAQItemProps {
   answer: string;
   isOpen: boolean;
   onClick: () => void;
+  id: string;
 }
 
-function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
+function FAQItem({ question, answer, isOpen, onClick, id }: FAQItemProps) {
+  const panelId = `${id}-panel`;
+  const buttonId = `${id}-button`;
+
   return (
     <div
       className={cn(
@@ -100,9 +105,11 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
       )}
     >
       <button
+        id={buttonId}
         onClick={onClick}
         className="w-full px-6 py-5 flex items-center justify-between text-left"
         aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span
           className={cn(
@@ -131,6 +138,9 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

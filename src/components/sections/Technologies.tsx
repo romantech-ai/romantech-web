@@ -52,8 +52,8 @@ export function Technologies() {
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg-void to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg-void to-transparent z-10" />
 
-        {/* Scrolling content */}
-        <div className="flex animate-marquee">
+        {/* Scrolling content - pauses on hover */}
+        <div className="flex animate-marquee hover:[animation-play-state:paused]">
           {[...technologies, ...technologies].map((tech, index) => (
             <div
               key={index}

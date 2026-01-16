@@ -36,10 +36,24 @@ export function CTA() {
 
           <motion.p
             variants={fadeUp}
-            className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto"
+            className="text-xl text-text-secondary mb-6 max-w-2xl mx-auto"
           >
             Escríbeme por WhatsApp y cuéntame tu idea. Te respondo en menos de 24 horas.
           </motion.p>
+
+          {/* Availability indicator */}
+          <motion.div
+            variants={fadeUp}
+            className="flex items-center justify-center gap-2 mb-10"
+          >
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span className="text-sm text-text-tertiary">
+              Disponible ahora · Respondo en &lt;2h
+            </span>
+          </motion.div>
 
           {/* Primary CTA - WhatsApp */}
           <motion.div variants={fadeUp} className="mb-8">

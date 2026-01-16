@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "Chatbots, webs y automatizaciones inteligentes que trabajan por ti 24/7.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/api/og",
         width: 1200,
         height: 630,
         alt: "Román Tech - Automatización e IA",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Román Tech | Automatización e IA para Negocios",
     description:
       "Chatbots, webs y automatizaciones inteligentes que trabajan por ti 24/7.",
-    images: ["/og-image.png"],
+    images: ["/api/og"],
   },
   robots: {
     index: true,
@@ -155,6 +155,54 @@ const jsonLd = {
   },
 };
 
+// FAQ Schema for rich snippets in Google
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta un proyecto de automatización o chatbot?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cada proyecto se presupuesta de forma personalizada según tus necesidades. Chatbots desde 500€, webs desde 800€, automatizaciones desde 300€. Agenda una llamada gratuita y te daré un presupuesto cerrado sin compromiso.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tiempo tarda en estar listo un proyecto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La mayoría de chatbots están operativos en 1-2 semanas. Webs entre 1-3 semanas dependiendo de la complejidad. Siempre acordamos fechas antes de empezar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Necesito conocimientos técnicos para usar un chatbot o automatización?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Para nada. Yo me encargo de toda la parte técnica. Tú solo necesitas saber qué quieres conseguir, y yo lo hago realidad. Te formo para que puedas gestionar lo básico de forma autónoma.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué garantía tengo de que funcionará?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, ofrezco soporte post-lanzamiento para asegurar que todo va sobre ruedas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Tienes casos de éxito o referencias?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí, he trabajado con más de 50 negocios en diferentes sectores: clínicas, inmobiliarias, academias, ecommerce... Puedo mostrarte proyectos similares al tuyo en nuestra llamada.",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -168,8 +216,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
       </head>
       <body className="bg-bg-primary text-text-primary antialiased">
+        {/* Skip to content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent-cyan focus:text-bg-primary focus:rounded-lg focus:font-medium focus:outline-none"
+        >
+          Saltar al contenido principal
+        </a>
         {children}
       </body>
     </html>
