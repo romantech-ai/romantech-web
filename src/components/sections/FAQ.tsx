@@ -9,39 +9,34 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "¿Cuánto cuesta un chatbot para mi clínica?",
+    question: "¿Cuánto cuesta un chatbot o automatización?",
     answer:
-      "Los chatbots de WhatsApp para clínicas parten desde 500€, dependiendo de las funcionalidades que necesites (agenda citas, responde preguntas frecuentes, envía recordatorios, etc.). En la llamada gratuita te doy un presupuesto cerrado sin sorpresas.",
+      "Depende de la complejidad. Los chatbots parten desde 500€ y las automatizaciones desde 300€. En la llamada gratuita analizo tu caso y te doy un presupuesto cerrado sin sorpresas.",
   },
   {
     question: "¿Cuánto tarda en estar funcionando?",
     answer:
-      "La mayoría de chatbots están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado. Siempre acordamos fechas antes de empezar.",
+      "La mayoría de proyectos están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado. Siempre acordamos fechas antes de empezar.",
   },
   {
-    question: "¿Necesito saber de tecnología para usarlo?",
+    question: "¿Necesito saber de tecnología?",
     answer:
-      "Para nada. Yo me encargo de todo lo técnico. Tú solo tienes que decirme cómo funciona tu clínica y qué quieres que haga el chatbot. Además, te formo para que puedas modificar respuestas si lo necesitas.",
+      "Para nada. Yo me encargo de todo lo técnico. Tú solo tienes que explicarme cómo funciona tu negocio y qué quieres conseguir. Te formo para que puedas usar y modificar lo que necesites.",
   },
   {
-    question: "¿El chatbot puede agendar citas automáticamente?",
+    question: "¿Qué tipo de automatizaciones puedes hacer?",
     answer:
-      "Sí, el chatbot se integra con tu sistema de gestión o calendario (Google Calendar, Calendly, etc.) para mostrar disponibilidad y agendar citas sin intervención humana. También envía recordatorios automáticos para reducir ausencias.",
+      "Chatbots de WhatsApp e Instagram, integración entre herramientas (CRM, email, calendarios), informes automáticos, recordatorios, captación de leads, y mucho más. Si implica conectar sistemas o eliminar trabajo manual, probablemente puedo ayudarte.",
   },
   {
-    question: "¿Qué pasa si un paciente pregunta algo que el chatbot no sabe?",
+    question: "¿Funciona con las herramientas que ya uso?",
     answer:
-      "El chatbot está entrenado para responder las preguntas más comunes de tu clínica. Si hay algo que no sabe, avisa a tu equipo por WhatsApp y ellos pueden intervenir. Nunca perderás un lead por falta de respuesta.",
-  },
-  {
-    question: "¿Funciona con mi software de gestión actual?",
-    answer:
-      "Sí, me integro con la mayoría de software de gestión de clínicas (Clinic Cloud, Doctoralia, Treatwell, etc.) y también con herramientas como Google Sheets, Notion, o cualquier sistema que uses. Lo consultamos en la llamada.",
+      "Sí, me integro con la mayoría de software: Google Workspace, Notion, Airtable, HubSpot, Calendly, Stripe, y cientos más. Si usas algo específico, lo consultamos en la llamada.",
   },
   {
     question: "¿Qué garantía tengo?",
     answer:
-      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, incluyo 30 días de soporte post-lanzamiento para asegurar que todo va perfecto.",
+      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, incluyo 30 días de soporte post-lanzamiento.",
   },
 ];
 

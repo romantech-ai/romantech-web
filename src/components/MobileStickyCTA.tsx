@@ -40,7 +40,7 @@ export function MobileStickyCTA() {
                        active:scale-[0.98] transition-transform"
           >
             <Calendar className="w-5 h-5" />
-            Ver demo para mi clínica
+            Ver demo gratis
           </a>
         </motion.div>
       )}

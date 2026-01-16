@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Linkedin, Github, Sparkles } from "lucide-react";
 import { Container, Section } from "../ui/Container";
-import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
+import { slideInLeft, slideInRight } from "@/lib/animations";
 
 const socialLinks = [
   { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/romantech/", label: "LinkedIn" },
@@ -73,44 +73,48 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="order-2 lg:order-2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 flex items-center gap-3">
               <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-accent-cyan" />
               Hola, soy Emilio
             </h2>
 
-            <div className="space-y-4 text-text-secondary leading-relaxed mb-6">
-              <p>
-                Fundador de <span className="text-white">Román Tech</span> y especialista
-                en automatización para el sector salud.
-              </p>
+            {/* Eslogan */}
+            <p className="text-lg text-accent-cyan italic mb-6">
+              &ldquo;La mejor inversión es aquella que te devuelve tiempo.&rdquo;
+            </p>
 
-              <p>
-                Me especializo en crear{" "}
-                <span className="text-white">chatbots de WhatsApp para clínicas</span> que agendan
-                citas, responden pacientes y captan leads automáticamente. Trabajo con clínicas
-                dentales, centros de estética, fisioterapeutas y psicólogos.
-              </p>
-
-              <p>
-                Mi promesa es simple:{" "}
-                <span className="text-white">
-                  tecnología que funciona sin que tengas que entenderla.
-                </span>{" "}
-                Tú te dedicas a tus pacientes, yo me encargo del resto.
-              </p>
-            </div>
-
-            {/* Credentials */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
-                Especialista WhatsApp Business API
+            {/* Credentials - Profesionales */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan">
+                Ingeniero Informático
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
                 Certificado n8n & Make
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-text-secondary">
-                Garantía de satisfacción
+                WhatsApp Business API
               </span>
+            </div>
+
+            <div className="space-y-4 text-text-secondary leading-relaxed mb-6">
+              <p>
+                Fundador de <span className="text-white">Román Tech</span>, donde ayudo a negocios
+                a automatizar sus procesos y escalar con tecnología.
+              </p>
+
+              <p>
+                Diseño <span className="text-white">chatbots, automatizaciones
+                y webs</span> que trabajan por ti: responden clientes, captan leads, eliminan
+                tareas repetitivas y hacen crecer tu negocio.
+              </p>
+
+              <p>
+                Mi enfoque:{" "}
+                <span className="text-white">
+                  tecnología que funciona sin que tengas que entenderla.
+                </span>{" "}
+                Tú te dedicas a lo importante, yo me encargo del resto.
+              </p>
             </div>
 
             {/* Social links */}
@@ -131,16 +135,6 @@ export function About() {
                 </a>
               ))}
             </div>
-
-            {/* Quote */}
-            <motion.blockquote
-              variants={fadeUp}
-              className="relative pl-6 border-l-2 border-accent-cyan/50"
-            >
-              <p className="text-lg text-white italic">
-                &ldquo;La mejor inversión es aquella que te devuelve tiempo.&rdquo;
-              </p>
-            </motion.blockquote>
           </motion.div>
         </div>
       </Container>

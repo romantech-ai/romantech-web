@@ -9,21 +9,21 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 const problems = [
   {
     icon: <PhoneOff className="w-8 h-8" />,
-    title: "Tu recepción no da abasto",
+    title: "Mensajes sin responder",
     description:
-      "El teléfono no para, los WhatsApps se acumulan. Tu equipo pierde horas contestando las mismas preguntas.",
+      "WhatsApps que se acumulan, emails sin contestar. Pierdes clientes porque no llegas a todo.",
   },
   {
     icon: <UserX className="w-8 h-8" />,
-    title: "Pacientes que no llegan",
+    title: "Tareas repetitivas",
     description:
-      "Olvidos, confusiones de horario, cancelaciones de última hora. Huecos en tu agenda que cuestan dinero.",
+      "Horas copiando datos, enviando lo mismo una y otra vez. Trabajo manual que te roba tiempo valioso.",
   },
   {
     icon: <CalendarX className="w-8 h-8" />,
-    title: "Citas perdidas fuera de horario",
+    title: "Clientes que se van",
     description:
-      "A las 11pm alguien quiere pedir cita. Tu clínica está cerrada. Mañana ya habrá ido a la competencia.",
+      "Cuando no respondes rápido, se van a la competencia. A las 11pm alguien quería comprarte, pero estabas cerrado.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function Problems() {
         >
           <motion.div variants={fadeUp}>
             <SectionHeader
-              title="¿Tu clínica sufre alguno de estos problemas?"
+              title="¿Tu negocio sufre alguno de estos problemas?"
               subtitle="Son más comunes de lo que crees. Y tienen solución."
             />
           </motion.div>

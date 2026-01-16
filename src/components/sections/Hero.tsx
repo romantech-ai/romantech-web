@@ -8,30 +8,29 @@ import { AnimatedText } from "../AnimatedText";
 import { GridBackground } from "../ParticleBackground";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
-// Tipos de clínicas que rotarán en el headline
-const clinicTypes = [
-  "Clínicas dentales",
-  "Centros de estética",
-  "Fisioterapeutas",
-  "Psicólogos",
-  "Podólogos",
-  "Clínicas veterinarias",
+// Beneficios que rotarán en el headline
+const benefits = [
+  "trabaja por ti",
+  "ahorra tiempo",
+  "capta clientes",
+  "nunca descansa",
+  "escala tu negocio",
 ];
 
 const stats = [
   {
     value: "24/7",
-    label: "Tu clínica atendiendo",
+    label: "Atención automatizada",
     icon: <Bot className="w-5 h-5" />
   },
   {
     value: "<7 días",
-    label: "Chatbot funcionando",
+    label: "Implementación",
     icon: <Zap className="w-5 h-5" />
   },
   {
     value: "0€",
-    label: "Coste de la demo",
+    label: "Demo sin compromiso",
     icon: <Clock className="w-5 h-5" />
   },
 ];
@@ -57,7 +56,7 @@ export function Hero() {
                          bg-accent-cyan/10 border border-accent-cyan/20 text-sm text-accent-cyan font-medium"
             >
               <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-              Especialista en automatización para clínicas
+              Automatización & IA para negocios
             </span>
           </motion.div>
 
@@ -66,11 +65,11 @@ export function Hero() {
             variants={fadeUp}
             className="text-hero font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
-            Chatbots de WhatsApp para{" "}
+            Tecnología que{" "}
             <br className="hidden sm:block" />
             <AnimatedText
-              words={clinicTypes}
-              className="min-w-[280px] md:min-w-[380px]"
+              words={benefits}
+              className="min-w-[220px] md:min-w-[320px]"
               interval={2500}
             />
           </motion.h1>
@@ -80,8 +79,8 @@ export function Hero() {
             variants={fadeUp}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-            Agendo citas, respondo dudas de pacientes y capto leads{" "}
-            <span className="text-white font-medium">mientras tú te dedicas a lo importante.</span>
+            Chatbots, automatizaciones y webs que captan clientes y eliminan tareas repetitivas.{" "}
+            <span className="text-white font-medium">Sin complicaciones técnicas.</span>
           </motion.p>
 
           {/* CTAs */}

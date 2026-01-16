@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "34664241328";
-const WHATSAPP_MESSAGE = "Hola! Tengo una clínica y me interesa saber más sobre los chatbots de WhatsApp para automatizar citas.";
+const WHATSAPP_MESSAGE = "Hola! Me interesa saber más sobre tus servicios de automatización.";
 
 export function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;

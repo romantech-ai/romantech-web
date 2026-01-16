@@ -11,21 +11,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://romantech.es"),
   title: {
-    default: "Román Tech | Chatbots IA para Clínicas y Centros de Salud",
+    default: "Román Tech | Automatización e IA para Negocios",
     template: "%s | Román Tech",
   },
   description:
-    "Automatiza tu clínica con chatbots de WhatsApp que agendan citas 24/7, responden pacientes y captan leads. Especialistas en clínicas dentales, estéticas, fisioterapia y más. Demo gratis.",
+    "Chatbots, automatizaciones y desarrollo web que hacen crecer tu negocio. Tecnología que trabaja por ti mientras tú te centras en lo importante. Demo gratis.",
   keywords: [
-    "chatbot whatsapp clínica",
-    "automatización clínicas",
-    "chatbot dental",
-    "IA para clínicas",
-    "chatbot citas médicas",
-    "automatización centro de salud",
-    "agencia IA España",
-    "chatbot estética",
-    "automatización fisioterapia",
+    "automatización negocios",
+    "chatbot whatsapp empresa",
+    "agencia automatización España",
+    "chatbot IA",
+    "automatización procesos",
+    "desarrollo web",
+    "n8n España",
+    "make automatización",
+    "chatbot instagram",
   ],
   authors: [{ name: "Emilio", url: "https://romantech.es" }],
   creator: "Román Tech",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://romantech.es",
     siteName: "Román Tech",
-    title: "Chatbots IA para Clínicas | Tu clínica atendiendo 24/7",
+    title: "Automatización e IA para Negocios | Román Tech",
     description:
-      "Chatbots de WhatsApp que agendan citas, responden pacientes y captan leads para tu clínica. Sin complicaciones técnicas.",
+      "Chatbots, automatizaciones y webs que captan clientes y eliminan tareas repetitivas. Sin complicaciones técnicas.",
     images: [
       {
         url: "/api/og",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chatbots IA para Clínicas | Román Tech",
+    title: "Automatización e IA para Negocios | Román Tech",
     description:
-      "Chatbots de WhatsApp que agendan citas 24/7 para tu clínica. Demo gratis.",
+      "Chatbots, automatizaciones y webs que hacen crecer tu negocio. Demo gratis.",
     images: ["/api/og"],
   },
   robots: {
@@ -81,14 +81,14 @@ const jsonLd = {
   logo: "https://romantech.es/logo.png",
   image: "https://romantech.es/og-image.png",
   description:
-    "Agencia de Inteligencia Artificial especializada en chatbots de WhatsApp para clínicas y centros de salud en España. Automatización de citas, recordatorios y atención al paciente 24/7.",
+    "Agencia de automatización e inteligencia artificial. Chatbots de WhatsApp, automatizaciones y desarrollo web para negocios en España.",
   priceRange: "€€",
   telephone: "+34664241328",
   email: "emilio@romantech.es",
   founder: {
     "@type": "Person",
     name: "Emilio",
-    jobTitle: "Fundador y Especialista en Automatización",
+    jobTitle: "Ingeniero Informático y Fundador",
   },
   address: {
     "@type": "PostalAddress",
@@ -125,22 +125,14 @@ const jsonLd = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Servicios de Automatización para Clínicas",
+    name: "Servicios de Automatización e IA",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Chatbots IA para Clínicas",
-          description: "Chatbots de WhatsApp que agendan citas, responden pacientes y envían recordatorios 24/7",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Web para Clínicas",
-          description: "Webs modernas con SEO local optimizado para captar pacientes",
+          name: "Chatbots con IA",
+          description: "Chatbots de WhatsApp e Instagram que responden clientes, agendan citas y captan leads 24/7",
         },
       },
       {
@@ -148,7 +140,15 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Automatizaciones",
-          description: "Recordatorios automáticos, integración con software de gestión y eliminación de trabajo manual",
+          description: "Integración de sistemas, flujos automáticos y eliminación de tareas repetitivas",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Desarrollo Web",
+          description: "Webs rápidas, modernas y optimizadas para convertir visitantes en clientes",
         },
       },
     ],
@@ -162,42 +162,42 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿Cuánto cuesta un chatbot para mi clínica?",
+      name: "¿Cuánto cuesta un chatbot o automatización?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los chatbots de WhatsApp para clínicas parten desde 500€, dependiendo de las funcionalidades que necesites (agenda citas, responde preguntas frecuentes, envía recordatorios, etc.). En la llamada gratuita te doy un presupuesto cerrado sin sorpresas.",
+        text: "Depende de la complejidad. Los chatbots parten desde 500€ y las automatizaciones desde 300€. En la llamada gratuita analizo tu caso y te doy un presupuesto cerrado sin sorpresas.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Cuánto tarda en estar funcionando el chatbot?",
+      name: "¿Cuánto tarda en estar funcionando?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La mayoría de chatbots están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado.",
+        text: "La mayoría de proyectos están operativos en menos de 7 días. Una vez que me das el OK, configuro todo y lo dejo funcionando con tu equipo formado.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Necesito saber de tecnología para usar el chatbot?",
+      name: "¿Necesito saber de tecnología?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Para nada. Yo me encargo de todo lo técnico. Tú solo tienes que decirme cómo funciona tu clínica y qué quieres que haga el chatbot. Además, te formo para que puedas modificar respuestas si lo necesitas.",
+        text: "Para nada. Yo me encargo de todo lo técnico. Tú solo tienes que explicarme cómo funciona tu negocio y qué quieres conseguir. Te formo para que puedas usar y modificar lo que necesites.",
       },
     },
     {
       "@type": "Question",
-      name: "¿El chatbot puede agendar citas automáticamente?",
+      name: "¿Qué tipo de automatizaciones puedes hacer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, el chatbot se integra con tu sistema de gestión o calendario (Google Calendar, Calendly, etc.) para mostrar disponibilidad y agendar citas sin intervención humana. También envía recordatorios automáticos para reducir ausencias.",
+        text: "Chatbots de WhatsApp e Instagram, integración entre herramientas (CRM, email, calendarios), informes automáticos, recordatorios, captación de leads, y mucho más.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Funciona con mi software de gestión actual?",
+      name: "¿Funciona con las herramientas que ya uso?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí, me integro con la mayoría de software de gestión de clínicas (Clinic Cloud, Doctoralia, Treatwell, etc.) y también con herramientas como Google Sheets, Notion, o cualquier sistema que uses.",
+        text: "Sí, me integro con la mayoría de software: Google Workspace, Notion, Airtable, HubSpot, Calendly, Stripe, y cientos más.",
       },
     },
   ],

@@ -31,14 +31,14 @@ export function CTA() {
             variants={fadeUp}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
-            ¿Listo para que tu clínica trabaje 24/7?
+            ¿Listo para automatizar tu negocio?
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="text-xl text-text-secondary mb-6 max-w-2xl mx-auto"
           >
-            Cuéntame sobre tu clínica y te explico cómo un chatbot puede ayudarte.{" "}
+            Cuéntame qué necesitas y te explico cómo puedo ayudarte.{" "}
             <span className="text-white">Sin compromiso, sin jerga técnica.</span>
           </motion.p>
 
@@ -59,7 +59,7 @@ export function CTA() {
           {/* Primary CTA - WhatsApp */}
           <motion.div variants={fadeUp} className="mb-8">
             <a
-              href="https://wa.me/34664241328?text=Hola!%20Tengo%20una%20clínica%20y%20me%20interesa%20saber%20más%20sobre%20los%20chatbots%20de%20WhatsApp%20para%20automatizar%20citas."
+              href="https://wa.me/34664241328?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20tus%20servicios%20de%20automatización."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-5 rounded-xl

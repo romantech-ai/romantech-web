@@ -9,38 +9,38 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 const services = [
   {
     icon: <Bot className="w-7 h-7" />,
-    title: "Chatbots IA para Clínicas",
+    title: "Chatbots con IA",
     description:
-      "Asistentes de WhatsApp que agendan citas, responden dudas de pacientes y envían recordatorios. Tu recepción virtual 24/7.",
-    features: ["WhatsApp Business API", "Agenda citas automáticamente", "Envía recordatorios"],
+      "Asistentes de WhatsApp e Instagram que responden clientes, agendan citas y captan leads. Disponibles 24/7.",
+    features: ["WhatsApp & Instagram", "Respuestas inteligentes", "Captación automática"],
     href: "#contacto",
     ctaText: "Quiero mi chatbot",
     badge: "Más popular",
   },
   {
-    icon: <Globe className="w-7 h-7" />,
-    title: "Web para tu Clínica",
-    description:
-      "Webs que convierten visitantes en pacientes. Diseño profesional, SEO local y formularios optimizados.",
-    features: ["Diseño médico profesional", "SEO local optimizado", "Integración con chatbot"],
-    href: "#contacto",
-    ctaText: "Ver ejemplos",
-  },
-  {
     icon: <Zap className="w-7 h-7" />,
     title: "Automatizaciones",
     description:
-      "Conecta tu software de gestión, envía recordatorios automáticos y elimina el trabajo manual de tu equipo.",
-    features: ["Integración con tu software", "Recordatorios automáticos", "Informes sin esfuerzo"],
+      "Conecta tus herramientas, elimina tareas repetitivas y haz que tu negocio funcione en piloto automático.",
+    features: ["Integración de sistemas", "Flujos automáticos", "Informes sin esfuerzo"],
     href: "#contacto",
-    ctaText: "Automatizar mi clínica",
+    ctaText: "Ver posibilidades",
+  },
+  {
+    icon: <Globe className="w-7 h-7" />,
+    title: "Desarrollo Web",
+    description:
+      "Webs rápidas, modernas y optimizadas para convertir visitantes en clientes. SEO incluido.",
+    features: ["Diseño profesional", "SEO optimizado", "Alta velocidad"],
+    href: "#contacto",
+    ctaText: "Ver ejemplos",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
     title: "Consultoría IA",
     description:
       "¿No sabes por dónde empezar? Te ayudo a identificar qué automatizar primero para máximo impacto.",
-    features: ["Auditoría de procesos", "Plan de implementación", "Formación a tu equipo"],
+    features: ["Auditoría de procesos", "Plan personalizado", "Formación incluida"],
     href: "#contacto",
     ctaText: "Agendar consultoría",
   },
@@ -58,8 +58,8 @@ export function Services() {
         >
           <motion.div variants={fadeUp}>
             <SectionHeader
-              title="Soluciones diseñadas para clínicas"
-              subtitle="Tecnología que entiende las necesidades de tu centro de salud."
+              title="Soluciones que impulsan tu negocio"
+              subtitle="Tecnología que trabaja por ti mientras tú te centras en lo importante."
             />
           </motion.div>
 
