@@ -9,6 +9,11 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
+    question: "¿Cuánto cuesta un proyecto?",
+    answer:
+      "Cada proyecto se presupuesta de forma personalizada según tus necesidades. Chatbots desde 500€, webs desde 800€, automatizaciones desde 300€. Agenda una llamada gratuita y te daré un presupuesto cerrado sin compromiso.",
+  },
+  {
     question: "¿Cuánto tiempo tarda en estar listo un proyecto?",
     answer:
       "La mayoría de chatbots están operativos en 1-2 semanas. Webs entre 1-3 semanas dependiendo de la complejidad. Siempre acordamos fechas antes de empezar.",
@@ -19,19 +24,24 @@ const faqs = [
       "Para nada. Yo me encargo de toda la parte técnica. Tú solo necesitas saber qué quieres conseguir, y yo lo hago realidad. Te formo para que puedas gestionar lo básico de forma autónoma.",
   },
   {
+    question: "¿Qué garantía tengo de que funcionará?",
+    answer:
+      "Todos mis proyectos incluyen garantía de satisfacción. Si algo no funciona como acordamos, lo arreglo sin coste adicional. Además, ofrezco soporte post-lanzamiento para asegurar que todo va sobre ruedas.",
+  },
+  {
     question: "¿Qué pasa si necesito cambios después?",
     answer:
       "Todos los proyectos incluyen un período de ajustes. Además, ofrezco planes de mantenimiento para que tu solución evolucione con tu negocio. Siempre estaré disponible para ayudarte.",
   },
   {
-    question: "¿Qué tecnologías utilizas?",
-    answer:
-      "Trabajo con las herramientas más avanzadas del mercado: OpenAI, Claude, n8n, Make, Next.js, React, y más. Siempre elijo la tecnología que mejor se adapta a cada proyecto.",
-  },
-  {
     question: "¿Cómo es el proceso de trabajo?",
     answer:
       "Empezamos con una llamada para entender tus necesidades. Luego diseño una propuesta personalizada, la desarrollamos juntos con feedback constante, y finalmente te formo para que puedas sacarle el máximo partido.",
+  },
+  {
+    question: "¿Tienes casos de éxito o referencias?",
+    answer:
+      "Sí, he trabajado con más de 50 negocios en diferentes sectores: clínicas, inmobiliarias, academias, ecommerce... Puedo mostrarte proyectos similares al tuyo en nuestra llamada.",
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LinkButton } from "./ui/Button";
@@ -66,13 +67,16 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3 group">
-              <img
+            <a href="/" className="flex items-center gap-3 group" aria-label="Ir a inicio">
+              <Image
                 src="/logo.png"
-                alt="Román Tech"
-                className="h-10 w-auto group-hover:opacity-90 transition-opacity duration-300"
+                alt="Román Tech logo"
+                width={40}
+                height={40}
+                className="group-hover:opacity-90 transition-opacity duration-300"
+                priority
               />
-              <span className="text-xl font-semibold text-white tracking-tight hidden sm:block">
+              <span className="text-xl font-semibold text-white tracking-tight">
                 Román Tech
               </span>
             </a>

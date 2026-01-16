@@ -23,7 +23,7 @@ const config: Config = {
         // Text
         'text-primary': '#FFFFFF',
         'text-secondary': '#94A3B8',
-        'text-tertiary': '#64748B',
+        'text-tertiary': '#7C8BA1', // Improved contrast ratio
       },
       fontFamily: {
         display: ['Inter', 'system-ui', 'sans-serif'],

@@ -70,42 +70,89 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD structured data
+// JSON-LD structured data - Organization + ProfessionalService
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
+  "@id": "https://romantech.es/#organization",
   name: "Román Tech",
+  alternateName: "RomanTech",
   url: "https://romantech.es",
-  logo: "https://romantech.es/logo.svg",
+  logo: "https://romantech.es/logo.png",
+  image: "https://romantech.es/og-image.png",
   description:
-    "Agencia de Inteligencia Artificial especializada en chatbots, desarrollo web y automatizaciones para negocios.",
+    "Agencia de Inteligencia Artificial especializada en chatbots, desarrollo web y automatizaciones para negocios en España.",
+  priceRange: "€€",
+  telephone: "+34664241328",
+  email: "emilio@romantech.es",
   founder: {
     "@type": "Person",
     name: "Emilio",
+    jobTitle: "Fundador y Desarrollador",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "ES",
+    addressLocality: "España",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "40.4168",
+    longitude: "-3.7038",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "España",
   },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
+    telephone: "+34664241328",
     email: "emilio@romantech.es",
     url: "https://calendly.com/emilio-romantech/demo-del-sistema-30-min",
+    availableLanguage: ["Spanish", "English"],
   },
   sameAs: [
     "https://www.linkedin.com/in/romantech/",
     "https://github.com/romantech-ai",
+    "https://wa.me/34664241328",
   ],
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "Desarrollo de Chatbots con IA",
-  provider: {
-    "@type": "Organization",
-    name: "Román Tech",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "19:00",
   },
-  description:
-    "Creación de chatbots inteligentes para WhatsApp y web que atienden clientes 24/7.",
-  areaServed: "ES",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios de Automatización e IA",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Chatbots IA",
+          description: "Asistentes virtuales inteligentes para WhatsApp y web",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Desarrollo Web",
+          description: "Webs modernas optimizadas para SEO y conversión",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Automatizaciones",
+          description: "Workflows con n8n, Make y Zapier para eliminar trabajo manual",
+        },
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -120,10 +167,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
         />
       </head>
       <body className="bg-bg-primary text-text-primary antialiased">

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "../ui/Container";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, MessageCircle } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -11,14 +12,14 @@ const footerLinks = {
     { label: "Consultoría", href: "#servicios" },
   ],
   contact: [
+    { label: "+34 664 241 328", href: "tel:+34664241328" },
     { label: "emilio@romantech.es", href: "mailto:emilio@romantech.es" },
+    { label: "WhatsApp", href: "https://wa.me/34664241328", external: true },
     { label: "Calendly", href: "https://calendly.com/emilio-romantech/demo-del-sistema-30-min", external: true },
+  ],
+  resources: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/romantech/", external: true },
     { label: "GitHub", href: "https://github.com/romantech-ai", external: true },
-  ],
-  legal: [
-    { label: "Política de privacidad", href: "/privacidad" },
-    { label: "Aviso legal", href: "/aviso-legal" },
   ],
 };
 
@@ -35,11 +36,12 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand */}
             <div className="lg:col-span-1">
-              <a href="/" className="flex items-center gap-3 mb-6">
-                <img
+              <a href="/" className="flex items-center gap-3 mb-6" aria-label="Ir a inicio">
+                <Image
                   src="/logo.png"
-                  alt="Román Tech"
-                  className="h-10 w-auto"
+                  alt="Román Tech logo"
+                  width={40}
+                  height={40}
                 />
                 <span className="text-xl font-semibold text-white tracking-tight">
                   Román Tech
@@ -55,7 +57,9 @@ export function Footer() {
                   <a
                     key={index}
                     href={link.href}
-                    aria-label={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visitar perfil de ${link.label}`}
                     className="w-9 h-9 rounded-lg bg-white/5 border border-white/10
                                flex items-center justify-center text-text-tertiary
                                hover:text-white hover:bg-white/10 hover:border-white/20
@@ -103,14 +107,16 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Legal */}
+            {/* Resources */}
             <div>
-              <h3 className="text-white font-semibold mb-4">Legal</h3>
+              <h3 className="text-white font-semibold mb-4">Recursos</h3>
               <ul className="space-y-3">
-                {footerLinks.legal.map((link, index) => (
+                {footerLinks.resources.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       className="text-text-secondary hover:text-white transition-colors duration-300 text-sm"
                     >
                       {link.label}
@@ -125,7 +131,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 py-6">
           <p className="text-text-tertiary text-sm text-center">
-            © 2026 Román Tech
+            © {new Date().getFullYear()} Román Tech. Todos los derechos reservados.
           </p>
         </div>
       </Container>

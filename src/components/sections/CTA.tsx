@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail, Calendar } from "lucide-react";
 import { Container, Section } from "../ui/Container";
-import { LinkButton } from "../ui/Button";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export function CTA() {
@@ -39,31 +38,37 @@ export function CTA() {
             variants={fadeUp}
             className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto"
           >
-            Agenda una demo gratuita de 30 minutos y descubre cómo la IA puede
-            trabajar para ti.
+            Escríbeme por WhatsApp y cuéntame tu idea. Te respondo en menos de 24 horas.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mb-12">
-            <LinkButton
-              href="https://calendly.com/emilio-romantech/demo-del-sistema-30-min"
-              variant="primary"
-              size="lg"
-              withArrow
-              external
-              className="shadow-glow-cyan-intense"
+          {/* Primary CTA - WhatsApp */}
+          <motion.div variants={fadeUp} className="mb-8">
+            <a
+              href="https://wa.me/34664241328?text=Hola!%20Me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20automatización%20e%20IA%20para%20mi%20negocio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-5 rounded-xl
+                         bg-[#25D366] hover:bg-[#20BD5A]
+                         text-white font-semibold text-lg
+                         shadow-[0_0_30px_rgba(37,211,102,0.4)]
+                         hover:shadow-[0_0_50px_rgba(37,211,102,0.5)]
+                         hover:scale-[1.02] hover:-translate-y-0.5
+                         active:scale-[0.98]
+                         transition-all duration-300"
             >
-              Agenda tu demo gratis
-            </LinkButton>
+              <MessageCircle className="w-6 h-6" />
+              Escríbeme por WhatsApp
+            </a>
           </motion.div>
 
           <motion.div variants={fadeUp}>
             <p className="text-text-tertiary mb-6">
-              ¿Prefieres escribirme directamente?
+              O si prefieres, agenda una videollamada:
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://wa.me/34664241328"
+                href="https://calendly.com/emilio-romantech/demo-del-sistema-30-min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
@@ -71,8 +76,8 @@ export function CTA() {
                            hover:bg-white/10 hover:text-white hover:border-white/20
                            transition-all duration-300"
               >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
+                <Calendar className="w-5 h-5" />
+                Agendar demo gratis
               </a>
               <a
                 href="mailto:emilio@romantech.es"

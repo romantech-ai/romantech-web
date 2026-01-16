@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Linkedin, Github, Sparkles } from "lucide-react";
 import { Container, Section } from "../ui/Container";
 import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
@@ -36,11 +37,14 @@ export function About() {
                             bg-gradient-to-br from-accent-cyan to-accent-purple"
               >
                 {/* Image container */}
-                <div className="w-full h-full rounded-[calc(1.5rem-3px)] overflow-hidden bg-bg-primary">
-                  <img
+                <div className="w-full h-full rounded-[calc(1.5rem-3px)] overflow-hidden bg-bg-primary relative">
+                  <Image
                     src="/roman-profile.jpg"
-                    alt="Emilio - Fundador de Román Tech"
-                    className="w-full h-full object-cover"
+                    alt="Emilio - Fundador de Román Tech, especialista en automatización e IA"
+                    fill
+                    sizes="(max-width: 768px) 256px, 320px"
+                    className="object-cover"
+                    priority
                   />
                 </div>
               </div>
@@ -100,7 +104,9 @@ export function About() {
                 <a
                   key={index}
                   href={link.href}
-                  aria-label={link.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visitar perfil de ${link.label}`}
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10
                              flex items-center justify-center text-text-secondary
                              hover:text-white hover:bg-white/10 hover:border-white/20

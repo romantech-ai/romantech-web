@@ -23,7 +23,7 @@
   /* === TEXTO === */
   --text-primary: #FFFFFF;
   --text-secondary: #94A3B8;
-  --text-tertiary: #64748B;
+  --text-tertiary: #7C8BA1; /* Improved contrast: 4.5:1 ratio on dark backgrounds */
   --text-gradient: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
 
   /* === BORDES === */

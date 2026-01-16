@@ -47,7 +47,7 @@ export function Hero() {
           >
             La IA que tu negocio{" "}
             <AnimatedText
-              words={["necesita", "merece", "transforma"]}
+              words={["necesita", "merece", "impulsa", "escala", "transforma"]}
               className="min-w-[200px] md:min-w-[280px]"
             />
           </motion.h1>
@@ -79,36 +79,6 @@ export function Hero() {
             <LinkButton href="#proceso" variant="secondary" size="lg">
               Ver cómo funciona
             </LinkButton>
-          </motion.div>
-
-          {/* Photo with premium treatment */}
-          <motion.div
-            variants={fadeUp}
-            className="relative mx-auto mb-16 group"
-          >
-            <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
-              {/* Glow effect */}
-              <div
-                className="absolute inset-[-20px] rounded-full blur-[60px] opacity-50
-                            bg-gradient-to-r from-accent-cyan to-accent-purple
-                            group-hover:opacity-70 transition-opacity duration-500"
-              />
-
-              {/* Border gradient container */}
-              <div
-                className="relative w-full h-full rounded-full p-[3px]
-                            bg-gradient-to-r from-accent-cyan to-accent-purple"
-              >
-                {/* Image container */}
-                <div className="w-full h-full rounded-full overflow-hidden bg-bg-primary">
-                  <img
-                    src="/roman-profile.jpg"
-                    alt="Emilio - Román Tech"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Stats */}

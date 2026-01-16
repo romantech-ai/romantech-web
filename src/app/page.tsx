@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/Navbar";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
   Hero,
   Problems,
   Services,
   Process,
   About,
+  Testimonials,
   Technologies,
   FAQ,
   CTA,
@@ -21,11 +23,13 @@ export default function Home() {
         <Services />
         <Process />
         <About />
+        <Testimonials />
         <Technologies />
         <FAQ />
         <CTA />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
