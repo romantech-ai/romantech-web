@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User, Phone, Loader2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   id: string;
@@ -161,7 +162,7 @@ export default function Chatbot() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple shadow-lg shadow-accent-cyan/25 flex items-center justify-center text-white"
+            className="fixed bottom-24 right-4 sm:right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple shadow-lg shadow-accent-cyan/25 flex items-center justify-center text-white"
             aria-label="Abrir chat"
           >
             <MessageSquare className="w-6 h-6" />
@@ -179,11 +180,20 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-48px)] h-[520px] max-h-[calc(100vh-100px)] bg-bg-elevated rounded-2xl shadow-2xl shadow-black/50 border border-white/10 flex flex-col overflow-hidden"
+            className="fixed z-50 bg-bg-elevated shadow-2xl shadow-black/50 border border-white/10 flex flex-col overflow-hidden
+              bottom-0 right-0 w-full h-[100dvh] rounded-none
+              sm:bottom-6 sm:right-6 sm:w-[380px] sm:max-w-[calc(100vw-48px)] sm:h-[520px] sm:max-h-[calc(100vh-100px)] sm:rounded-2xl"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 border-b border-white/10">
+            <div className="flex items-center justify-between px-4 py-3 sm:py-3 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 border-b border-white/10 safe-top">
               <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="sm:hidden p-2 -ml-2 text-text-secondary hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                  aria-label="Cerrar chat"
+                >
+                  <X className="w-5 h-5" />
+                </button>
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple flex items-center justify-center">
                   <Bot className="w-5 h-5 text-white" />
                 </div>
@@ -205,7 +215,7 @@ export default function Chatbot() {
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-text-secondary hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                  className="hidden sm:block p-2 text-text-secondary hover:text-white transition-colors rounded-lg hover:bg-white/5"
                   aria-label="Cerrar chat"
                 >
                   <X className="w-5 h-5" />
@@ -237,7 +247,27 @@ export default function Chatbot() {
                       ? 'bg-accent-purple/20 text-white rounded-tr-sm'
                       : 'bg-white/5 text-text-primary rounded-tl-sm'
                   }`}>
-                    {message.content}
+                    {message.role === 'assistant' ? (
+                      <ReactMarkdown
+                        components={{
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-accent-cyan hover:text-accent-cyan/80 underline underline-offset-2 transition-colors"
+                            >
+                              {children}
+                            </a>
+                          ),
+                          p: ({ children }) => <span>{children}</span>,
+                        }}
+                      >
+                        {message.content}
+                      </ReactMarkdown>
+                    ) : (
+                      message.content
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -302,7 +332,7 @@ export default function Chatbot() {
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="p-4 pt-2 border-t border-white/10">
+            <form onSubmit={handleSubmit} className="p-4 pt-2 pb-4 sm:pb-4 border-t border-white/10 safe-bottom">
               <div className="flex gap-2">
                 <input
                   ref={inputRef}
@@ -311,18 +341,18 @@ export default function Chatbot() {
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Escribe tu mensaje..."
                   disabled={isLoading}
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-text-tertiary focus:outline-none focus:border-accent-cyan/50 disabled:opacity-50 transition-colors"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 sm:py-2.5 text-base sm:text-sm text-white placeholder-text-tertiary focus:outline-none focus:border-accent-cyan/50 disabled:opacity-50 transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="w-10 h-10 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-xl flex items-center justify-center text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-accent-cyan/25 transition-all"
+                  className="w-12 h-12 sm:w-10 sm:h-10 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-xl flex items-center justify-center text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-accent-cyan/25 transition-all flex-shrink-0"
                   aria-label="Enviar mensaje"
                 >
                   {isLoading ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 sm:w-4 sm:h-4 animate-spin" />
                   ) : (
-                    <Send className="w-4 h-4" />
+                    <Send className="w-5 h-5 sm:w-4 sm:h-4" />
                   )}
                 </button>
               </div>
