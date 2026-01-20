@@ -269,41 +269,44 @@ function AutomationDemo({ colors }: { colors: typeof colorMap.cyan }) {
 }
 
 function WebDemo({ colors }: { colors: typeof colorMap.cyan }) {
+  const features = [
+    { icon: Gauge, label: 'PageSpeed 95+', desc: 'Carga ultra rápida' },
+    { icon: Search, label: 'SEO Local', desc: 'Aparece en Google Maps' },
+    { icon: Palette, label: 'Diseño Premium', desc: 'Adaptado a tu marca' },
+    { icon: Bot, label: 'Chatbot Incluido', desc: 'Captura leads 24/7' },
+  ];
+
   return (
-    <div className={`rounded-2xl ${colors.bg} ${colors.border} border overflow-hidden`}>
-      {/* Browser bar */}
-      <div className="h-8 bg-white/5 border-b border-white/10 flex items-center px-3 gap-2">
-        <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-        </div>
-        <div className="flex-1 mx-2">
-          <div className="flex items-center gap-2 px-2 py-1 bg-white/5 rounded text-xs text-text-tertiary">
-            <div className="w-2 h-2 rounded-full bg-green-500/50" />
-            tu-clinica.es
-          </div>
-        </div>
+    <div className={`rounded-2xl ${colors.bg} ${colors.border} border p-4`}>
+      <p className="text-white text-sm font-medium mb-4">Lo que incluye tu web</p>
+      <div className="space-y-3">
+        {features.map((feature, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.1 }}
+            className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+          >
+            <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center`}>
+              <feature.icon className={`w-5 h-5 ${colors.text}`} />
+            </div>
+            <div className="flex-1">
+              <p className="text-white text-sm font-medium">{feature.label}</p>
+              <p className="text-text-tertiary text-xs">{feature.desc}</p>
+            </div>
+            <CheckCircle2 className={`w-5 h-5 ${colors.text}`} />
+          </motion.div>
+        ))}
       </div>
-      {/* Preview */}
-      <div className="relative aspect-[16/9]">
-        <iframe
-          src="https://fisioterapia-vitalmove-website.vercel.app/"
-          className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
-          title="Demo Web"
-          loading="lazy"
-        />
-        <a
-          href="https://fisioterapia-vitalmove-website.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-4 opacity-0 hover:opacity-100 transition-opacity"
-        >
-          <span className="px-4 py-2 bg-emerald-500 rounded-lg text-white text-sm font-medium flex items-center gap-2">
-            Ver demo completa <ExternalLink className="w-4 h-4" />
-          </span>
-        </a>
-      </div>
+      <a
+        href="https://fisioterapia-vitalmove-website.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 ${colors.bg} hover:bg-emerald-500/20 border ${colors.border} rounded-xl text-sm font-medium ${colors.text} transition-colors`}
+      >
+        Ver ejemplo real <ExternalLink className="w-4 h-4" />
+      </a>
     </div>
   );
 }
@@ -434,7 +437,7 @@ export function ServicesExpanded() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`grid lg:grid-cols-2 gap-12 p-8 rounded-3xl bg-gradient-to-br ${colors.gradient} border ${colors.border}`}
+            className={`grid lg:grid-cols-2 gap-8 lg:gap-12 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${colors.gradient} border ${colors.border}`}
           >
             {/* Left: Info */}
             <div>
@@ -486,17 +489,17 @@ export function ServicesExpanded() {
             {/* Right: Stats + Visual */}
             <div className="flex flex-col justify-center">
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
                 {currentService.stats.map((stat, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`p-4 rounded-xl ${colors.bg} ${colors.border} border text-center`}
+                    className={`p-3 sm:p-4 rounded-xl ${colors.bg} ${colors.border} border text-center`}
                   >
-                    <div className={`text-2xl md:text-3xl font-bold ${colors.text} mb-1`}>{stat.value}</div>
-                    <div className="text-text-tertiary text-sm">{stat.label}</div>
+                    <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${colors.text} mb-0.5 sm:mb-1`}>{stat.value}</div>
+                    <div className="text-text-tertiary text-xs sm:text-sm">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
