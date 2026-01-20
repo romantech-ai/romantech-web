@@ -1,13 +1,18 @@
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import Chatbot from "@/components/Chatbot";
 import {
   Hero,
   Problems,
-  Services,
+  ServicesExpanded,
+  ChatbotShowcase,
+  AICapabilities,
+  UseCases,
+  Integrations,
+  Portfolio,
   Process,
   About,
-  // Testimonials, // TODO: Descomentar cuando tengamos testimonios reales
   Technologies,
   FAQ,
   CTA,
@@ -21,10 +26,14 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <Problems />
-        <Services />
+        <ServicesExpanded />
+        <ChatbotShowcase />
+        <AICapabilities />
+        <UseCases />
+        <Integrations />
+        <Portfolio />
         <Process />
         <About />
-        {/* <Testimonials /> TODO: Añadir cuando tengamos testimonios reales */}
         <Technologies />
         <FAQ />
         <CTA />
@@ -32,6 +41,7 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
       <MobileStickyCTA />
+      <Chatbot />
     </>
   );
 }

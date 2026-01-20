@@ -1,6 +1,12 @@
 export { Hero } from "./Hero";
 export { Problems } from "./Problems";
 export { Services } from "./Services";
+export { ServicesExpanded } from "./ServicesExpanded";
+export { ChatbotShowcase } from "./ChatbotShowcase";
+export { AICapabilities } from "./AICapabilities";
+export { UseCases } from "./UseCases";
+export { Integrations } from "./Integrations";
+export { Portfolio } from "./Portfolio";
 export { Process } from "./Process";
 export { About } from "./About";
 export { Testimonials } from "./Testimonials";
