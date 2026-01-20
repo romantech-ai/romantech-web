@@ -15,6 +15,20 @@ const STORAGE_KEY = 'romantech-chat';
 const WHATSAPP_NUMBER = '34664241328';
 const CALENDLY_URL = 'https://calendly.com/emilio-romantech/demo-del-sistema-30-min';
 
+// Convert phone numbers to WhatsApp links
+function processMessageContent(content: string): string {
+  // Match Spanish phone numbers (with or without country code)
+  // Patterns: 34664241328, +34664241328, 664241328, 664 241 328
+  return content.replace(
+    /(?:\+?34)?[\s]?(\d{3})[\s]?(\d{3})[\s]?(\d{3})/g,
+    (match) => {
+      const cleanNumber = match.replace(/[\s+]/g, '');
+      const fullNumber = cleanNumber.startsWith('34') ? cleanNumber : `34${cleanNumber}`;
+      return `[${match}](https://wa.me/${fullNumber})`;
+    }
+  );
+}
+
 const initialMessage: Message = {
   id: '1',
   role: 'assistant',
@@ -263,7 +277,7 @@ export default function Chatbot() {
                           p: ({ children }) => <span>{children}</span>,
                         }}
                       >
-                        {message.content}
+                        {processMessageContent(message.content)}
                       </ReactMarkdown>
                     ) : (
                       message.content

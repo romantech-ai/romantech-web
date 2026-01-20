@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container, Section, SectionHeader } from '@/components/ui/Container';
 import { fadeUp, staggerContainer } from '@/lib/animations';
@@ -20,7 +20,11 @@ import {
   Gauge,
   Users,
   Clock,
-  Target
+  Target,
+  Bell,
+  CheckCircle2,
+  Send,
+  ExternalLink
 } from 'lucide-react';
 
 interface Service {
@@ -150,6 +154,226 @@ const colorMap = {
   },
 };
 
+// Interactive Demo Components
+function ChatbotDemo({ colors }: { colors: typeof colorMap.cyan }) {
+  const [step, setStep] = useState(0);
+  const messages = [
+    { role: 'bot', text: 'Hola! Soy el asistente de VitalMove. ¿En qué puedo ayudarte?' },
+    { role: 'user', text: 'Quiero pedir cita para fisioterapia' },
+    { role: 'bot', text: '¿Dónde sientes las molestias: espalda, rodilla, hombro u otra zona?' },
+    { role: 'user', text: 'Me duele la espalda baja' },
+    { role: 'bot', text: 'Perfecto. Tenemos disponibilidad mañana a las 10:00 o 17:30. ¿Cuál prefieres?' },
+  ];
+
+  useEffect(() => {
+    if (step < messages.length - 1) {
+      const timer = setTimeout(() => setStep(s => s + 1), 2000);
+      return () => clearTimeout(timer);
+    } else {
+      const timer = setTimeout(() => setStep(0), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [step, messages.length]);
+
+  return (
+    <div className={`rounded-2xl ${colors.bg} ${colors.border} border overflow-hidden`}>
+      {/* Chat header */}
+      <div className="px-4 py-3 border-b border-white/10 flex items-center gap-3">
+        <div className={`w-8 h-8 rounded-full ${colors.bg} flex items-center justify-center`}>
+          <Bot className={`w-4 h-4 ${colors.text}`} />
+        </div>
+        <div>
+          <p className="text-white text-sm font-medium">Asistente IA</p>
+          <p className="text-green-400 text-xs flex items-center gap-1">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full" /> Online
+          </p>
+        </div>
+      </div>
+      {/* Messages */}
+      <div className="p-4 space-y-3 h-48 overflow-hidden">
+        {messages.slice(0, step + 1).map((msg, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div className={`max-w-[80%] px-3 py-2 rounded-xl text-sm ${
+              msg.role === 'user'
+                ? 'bg-accent-purple/20 text-white'
+                : 'bg-white/10 text-text-primary'
+            }`}>
+              {msg.text}
+            </div>
+          </motion.div>
+        ))}
+        {step < messages.length - 1 && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-1 px-3">
+            <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+            <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+            <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function AutomationDemo({ colors }: { colors: typeof colorMap.cyan }) {
+  const [activeStep, setActiveStep] = useState(0);
+  const steps = [
+    { icon: Calendar, label: 'Cita agendada', time: '10:00' },
+    { icon: Bell, label: 'Recordatorio 24h', time: '09:00' },
+    { icon: MessageSquare, label: 'WhatsApp enviado', time: '09:01' },
+    { icon: CheckCircle2, label: 'Confirmado', time: '09:15' },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStep(s => (s + 1) % steps.length);
+    }, 1500);
+    return () => clearInterval(timer);
+  }, [steps.length]);
+
+  return (
+    <div className={`rounded-2xl ${colors.bg} ${colors.border} border p-4`}>
+      <p className="text-white text-sm font-medium mb-4">Flujo automático de recordatorios</p>
+      <div className="space-y-3">
+        {steps.map((step, i) => (
+          <motion.div
+            key={i}
+            className={`flex items-center gap-3 p-3 rounded-xl transition-all ${
+              i <= activeStep ? 'bg-white/10' : 'bg-white/5 opacity-50'
+            }`}
+            animate={{ scale: i === activeStep ? 1.02 : 1 }}
+          >
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+              i <= activeStep ? colors.bg : 'bg-white/5'
+            }`}>
+              <step.icon className={`w-5 h-5 ${i <= activeStep ? colors.text : 'text-text-tertiary'}`} />
+            </div>
+            <div className="flex-1">
+              <p className={`text-sm font-medium ${i <= activeStep ? 'text-white' : 'text-text-tertiary'}`}>
+                {step.label}
+              </p>
+              <p className="text-text-tertiary text-xs">{step.time}</p>
+            </div>
+            {i <= activeStep && (
+              <CheckCircle2 className={`w-5 h-5 ${colors.text}`} />
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function WebDemo({ colors }: { colors: typeof colorMap.cyan }) {
+  return (
+    <div className={`rounded-2xl ${colors.bg} ${colors.border} border overflow-hidden`}>
+      {/* Browser bar */}
+      <div className="h-8 bg-white/5 border-b border-white/10 flex items-center px-3 gap-2">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+        </div>
+        <div className="flex-1 mx-2">
+          <div className="flex items-center gap-2 px-2 py-1 bg-white/5 rounded text-xs text-text-tertiary">
+            <div className="w-2 h-2 rounded-full bg-green-500/50" />
+            tu-clinica.es
+          </div>
+        </div>
+      </div>
+      {/* Preview */}
+      <div className="relative aspect-[16/9]">
+        <iframe
+          src="https://fisioterapia-vitalmove-website.vercel.app/"
+          className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
+          title="Demo Web"
+          loading="lazy"
+        />
+        <a
+          href="https://fisioterapia-vitalmove-website.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-4 opacity-0 hover:opacity-100 transition-opacity"
+        >
+          <span className="px-4 py-2 bg-emerald-500 rounded-lg text-white text-sm font-medium flex items-center gap-2">
+            Ver demo completa <ExternalLink className="w-4 h-4" />
+          </span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function ConsultoriaDemo({ colors }: { colors: typeof colorMap.cyan }) {
+  const [activePhase, setActivePhase] = useState(0);
+  const phases = [
+    { title: 'Auditoría', desc: 'Analizamos tu clínica', progress: 100 },
+    { title: 'Plan', desc: 'Diseñamos solución', progress: 75 },
+    { title: 'Implementación', desc: 'Ponemos en marcha', progress: 50 },
+    { title: 'Soporte', desc: '30 días incluidos', progress: 25 },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActivePhase(p => (p + 1) % phases.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [phases.length]);
+
+  return (
+    <div className={`rounded-2xl ${colors.bg} ${colors.border} border p-4`}>
+      <p className="text-white text-sm font-medium mb-4">Proceso de consultoría</p>
+      <div className="space-y-3">
+        {phases.map((phase, i) => (
+          <motion.div
+            key={i}
+            className={`p-3 rounded-xl transition-all ${
+              i === activePhase ? 'bg-white/10 ring-1 ring-orange-500/30' : 'bg-white/5'
+            }`}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <div>
+                <p className={`text-sm font-medium ${i === activePhase ? 'text-white' : 'text-text-secondary'}`}>
+                  {i + 1}. {phase.title}
+                </p>
+                <p className="text-text-tertiary text-xs">{phase.desc}</p>
+              </div>
+              {i < activePhase && <CheckCircle2 className="w-5 h-5 text-orange-400" />}
+            </div>
+            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-orange-500 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: i <= activePhase ? '100%' : '0%' }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ServiceDemo({ serviceId, colors }: { serviceId: string; colors: typeof colorMap.cyan }) {
+  switch (serviceId) {
+    case 'chatbots':
+      return <ChatbotDemo colors={colors} />;
+    case 'automatizaciones':
+      return <AutomationDemo colors={colors} />;
+    case 'web':
+      return <WebDemo colors={colors} />;
+    case 'consultoria':
+      return <ConsultoriaDemo colors={colors} />;
+    default:
+      return null;
+  }
+}
+
 export function ServicesExpanded() {
   const [activeService, setActiveService] = useState<string>('chatbots');
 
@@ -179,7 +403,7 @@ export function ServicesExpanded() {
               <button
                 key={service.id}
                 onClick={() => setActiveService(service.id)}
-                className={`relative flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all ${
+                className={`relative flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-medium transition-all ${
                   isActive
                     ? `${serviceColors.bg} ${serviceColors.border} border ${serviceColors.text}`
                     : 'bg-white/[0.02] border border-white/[0.05] text-text-secondary hover:text-white hover:border-white/[0.1]'
@@ -188,8 +412,13 @@ export function ServicesExpanded() {
                 <service.icon className="w-5 h-5" />
                 <span className="hidden sm:inline">{service.title}</span>
                 {service.badge && isActive && (
-                  <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full bg-accent-cyan text-bg-primary text-xs font-semibold">
+                  <span className="hidden sm:block absolute -top-2 -right-2 px-2 py-0.5 rounded-full bg-accent-cyan text-bg-primary text-xs font-semibold">
                     {service.badge}
+                  </span>
+                )}
+                {service.badge && isActive && (
+                  <span className="sm:hidden text-[10px] px-1.5 py-0.5 rounded bg-accent-cyan/20 text-accent-cyan font-semibold ml-1">
+                    Top
                   </span>
                 )}
               </button>
@@ -272,13 +501,8 @@ export function ServicesExpanded() {
                 ))}
               </div>
 
-              {/* Visual placeholder */}
-              <div className={`aspect-video rounded-2xl ${colors.bg} ${colors.border} border flex items-center justify-center`}>
-                <div className="text-center">
-                  <currentService.icon className={`w-16 h-16 ${colors.text} opacity-30 mx-auto mb-4`} />
-                  <p className="text-text-tertiary text-sm">Demo interactiva</p>
-                </div>
-              </div>
+              {/* Interactive Demo */}
+              <ServiceDemo serviceId={currentService.id} colors={colors} />
             </div>
           </motion.div>
         </AnimatePresence>
