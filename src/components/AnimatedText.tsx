@@ -25,9 +25,9 @@ export function AnimatedText({ words, className = "", interval = 3000 }: Animate
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
-          initial={{ opacity: 0, y: 20, rotateX: -20 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          exit={{ opacity: 0, y: -20, rotateX: 20 }}
+          initial={{ y: 15, rotateX: -10 }}
+          animate={{ y: 0, rotateX: 0 }}
+          exit={{ y: -15, rotateX: 10 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="inline-block text-gradient"
         >

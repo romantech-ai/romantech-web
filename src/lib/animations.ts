@@ -4,32 +4,29 @@ import { Variants } from "framer-motion";
 export const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export const easeInOut: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
-// Fade up animation
+// IMPORTANT: No opacity in hidden states - content is always visible
+// Animations are purely transform-based for mobile compatibility
+
+// Fade up animation - slide up only
 export const fadeUp: Variants = {
   hidden: {
-    opacity: 0,
     y: 30
   },
   visible: {
-    opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: easeOut
     }
   }
 };
 
-// Fade in animation
+// Fade in animation - no animation, just immediate
 export const fadeIn: Variants = {
-  hidden: {
-    opacity: 0
-  },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: easeOut
+      duration: 0.3
     }
   }
 };
@@ -37,14 +34,12 @@ export const fadeIn: Variants = {
 // Scale in animation
 export const scaleIn: Variants = {
   hidden: {
-    opacity: 0,
     scale: 0.95
   },
   visible: {
-    opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: easeOut
     }
   }
@@ -55,8 +50,8 @@ export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      staggerChildren: 0.06,
+      delayChildren: 0.1
     }
   }
 };
@@ -64,14 +59,12 @@ export const staggerContainer: Variants = {
 // Slide in from left
 export const slideInLeft: Variants = {
   hidden: {
-    opacity: 0,
-    x: -50
+    x: -30
   },
   visible: {
-    opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: easeOut
     }
   }
@@ -80,14 +73,12 @@ export const slideInLeft: Variants = {
 // Slide in from right
 export const slideInRight: Variants = {
   hidden: {
-    opacity: 0,
-    x: 50
+    x: 30
   },
   visible: {
-    opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: easeOut
     }
   }
@@ -149,51 +140,45 @@ export const buttonHover = {
   }
 };
 
-// Text reveal animation for hero
+// Text reveal animation for hero - no opacity
 export const textReveal: Variants = {
   hidden: {
-    opacity: 0,
-    y: 20,
-    rotateX: -20
+    y: 15,
+    rotateX: -10
   },
   visible: {
-    opacity: 1,
     y: 0,
     rotateX: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: easeOut
     }
   }
 };
 
-// Counter animation for stats
+// Counter animation for stats - no opacity
 export const counterAnimation = {
   hidden: {
-    opacity: 0,
-    scale: 0.8
+    scale: 0.9
   },
   visible: {
-    opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: easeOut
     }
   }
 };
 
-// Navbar animation
+// Navbar animation - keep opacity for nav only
 export const navbarAnimation: Variants = {
   hidden: {
-    y: -100,
-    opacity: 0
+    y: -50
   },
   visible: {
     y: 0,
-    opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: easeOut
     }
   }

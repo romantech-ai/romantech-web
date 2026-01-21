@@ -194,8 +194,8 @@ function ChatbotDemo({ colors }: { colors: typeof colorMap.cyan }) {
         {messages.slice(0, step + 1).map((msg, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 8 }}
+            animate={{ y: 0 }}
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div className={`max-w-[80%] px-3 py-2 rounded-xl text-sm ${
@@ -208,7 +208,7 @@ function ChatbotDemo({ colors }: { colors: typeof colorMap.cyan }) {
           </motion.div>
         ))}
         {step < messages.length - 1 && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-1 px-3">
+          <motion.div initial={{}} animate={{}} className="flex gap-1 px-3">
             <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
             <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
             <span className="w-2 h-2 bg-white/30 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
@@ -283,8 +283,8 @@ function WebDemo({ colors }: { colors: typeof colorMap.cyan }) {
         {features.map((feature, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: -8 }}
+            animate={{ x: 0 }}
             transition={{ delay: i * 0.1 }}
             className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
           >
@@ -433,9 +433,9 @@ export function ServicesExpanded() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeService}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ y: 15 }}
+            animate={{ y: 0 }}
+            exit={{ y: -15 }}
             transition={{ duration: 0.3 }}
             className={`grid lg:grid-cols-2 gap-8 lg:gap-12 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${colors.gradient} border ${colors.border}`}
           >
@@ -461,8 +461,8 @@ export function ServicesExpanded() {
                 {currentService.features.map((feature, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ x: -15 }}
+                    animate={{ x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
@@ -493,8 +493,8 @@ export function ServicesExpanded() {
                 {currentService.stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                     className={`p-3 sm:p-4 rounded-xl ${colors.bg} ${colors.border} border text-center`}
                   >

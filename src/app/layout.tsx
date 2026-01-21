@@ -205,12 +205,6 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <head>
         <link rel="canonical" href="https://romantech.es" />
-        {/* Detect mobile before React hydration to prevent flash of invisible content */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `if(window.innerWidth<768)document.documentElement.classList.add('is-mobile');`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

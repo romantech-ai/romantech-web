@@ -109,9 +109,9 @@ export function Hero() {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
+                    initial={{ y: 15 }}
+                    animate={{ y: 0 }}
+                    transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
                     className="flex flex-col items-center gap-2"
                   >
                     <div className="flex items-center gap-3">
@@ -129,9 +129,9 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        initial={{ y: -5 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
