@@ -1,7 +1,5 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import Chatbot from "@/components/Chatbot";
 import {
   Hero,
   Problems,
@@ -18,6 +16,15 @@ import {
   CTA,
   Footer,
 } from "@/components/sections";
+
+// Lazy loading for non-critical components (not above the fold)
+const Chatbot = dynamic(() => import("@/components/Chatbot"));
+const WhatsAppButton = dynamic(() =>
+  import("@/components/WhatsAppButton").then((m) => ({ default: m.WhatsAppButton }))
+);
+const MobileStickyCTA = dynamic(() =>
+  import("@/components/MobileStickyCTA").then((m) => ({ default: m.MobileStickyCTA }))
+);
 
 export default function Home() {
   return (
