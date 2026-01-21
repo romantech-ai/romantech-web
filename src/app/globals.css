@@ -262,12 +262,11 @@ body {
 }
 
 /* === FORCE VISIBILITY ON MOBILE === */
-/* Uses .is-mobile class added by inline script before React hydration */
-.is-mobile section,
-.is-mobile section > *,
-.is-mobile section > * > *,
-.is-mobile section > * > * > *,
-.is-mobile section > * > * > * > * {
+/* Override Framer Motion inline styles - target elements with style attribute */
+.is-mobile [style],
+.is-mobile [style] *,
+.is-mobile div[style],
+.is-mobile section [style] {
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
