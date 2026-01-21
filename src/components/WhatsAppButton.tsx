@@ -36,8 +36,8 @@ export function WhatsAppButton() {
                  hover:shadow-[0_6px_30px_rgba(37,211,102,0.5)]
                  transition-all duration-300
                  group"
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
+      initial={{ scale: 0.8, y: 20 }}
+      animate={{ scale: 1, y: 0 }}
       transition={{ delay: 1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
