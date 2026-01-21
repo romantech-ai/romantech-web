@@ -261,14 +261,24 @@ body {
   }
 }
 
-/* === ENSURE SECTION BACKGROUNDS ON MOBILE === */
-@media (max-width: 768px) {
-  section {
-    background-color: var(--bg-primary);
-  }
+/* === FORCE VISIBILITY ON MOBILE === */
+/* Uses .is-mobile class added by inline script before React hydration */
+.is-mobile section,
+.is-mobile section > *,
+.is-mobile section > * > *,
+.is-mobile section > * > * > *,
+.is-mobile section > * > * > * > * {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
 
-  section.bg-bg-void {
-    background-color: var(--bg-void);
-  }
+.is-mobile section {
+  background-color: var(--bg-primary);
+}
+
+.is-mobile section.bg-bg-void,
+.is-mobile .bg-bg-void {
+  background-color: var(--bg-void);
 }
 

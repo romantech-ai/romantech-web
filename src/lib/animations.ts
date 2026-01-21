@@ -50,7 +50,7 @@ export const scaleIn: Variants = {
   }
 };
 
-// Stagger container - no opacity change to prevent invisible sections on mobile
+// Stagger container
 export const staggerContainer: Variants = {
   hidden: {},
   visible: {
