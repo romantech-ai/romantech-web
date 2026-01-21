@@ -5,7 +5,7 @@ import { ChevronDown, Bot, Zap, Clock } from "lucide-react";
 import { Container } from "../ui/Container";
 import { LinkButton } from "../ui/Button";
 import { AnimatedText } from "../AnimatedText";
-import { GridBackground } from "../ParticleBackground";
+import { GridBackground } from "../GridBackground";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 // Beneficios que rotarán en el headline
