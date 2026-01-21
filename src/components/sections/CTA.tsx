@@ -24,7 +24,7 @@ export function CTA() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "0px" }}
           className="max-w-3xl mx-auto text-center"
         >
           <motion.h2

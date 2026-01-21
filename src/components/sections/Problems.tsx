@@ -35,7 +35,7 @@ export function Problems() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "0px" }}
         >
           <motion.div variants={fadeUp}>
             <SectionHeader

@@ -54,7 +54,7 @@ export function ChatbotShowcase() {
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             className="flex justify-center lg:justify-start order-2 lg:order-1"
           >
             <ChatbotDemo />
@@ -65,7 +65,7 @@ export function ChatbotShowcase() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             className="order-1 lg:order-2"
           >
             <motion.div variants={slideInRight} className="mb-8">

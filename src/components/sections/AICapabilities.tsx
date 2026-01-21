@@ -128,7 +128,7 @@ export function AICapabilities() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "0px" }}
           className="space-y-12"
         >
           {aiCapabilities.map((category, categoryIndex) => {

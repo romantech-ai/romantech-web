@@ -21,7 +21,7 @@ export function About() {
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             className="relative mx-auto lg:mx-0 order-1 lg:order-1"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80">
@@ -70,7 +70,7 @@ export function About() {
             variants={slideInRight}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "0px" }}
             className="order-2 lg:order-2"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 flex items-center gap-3">
