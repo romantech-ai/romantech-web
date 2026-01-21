@@ -261,3 +261,12 @@ body {
   }
 }
 
+/* === DISABLE FRAMER MOTION OPACITY ANIMATIONS ON MOBILE === */
+/* This prevents sections from being invisible while waiting for animations */
+@media (max-width: 768px) {
+  #main-content section * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
