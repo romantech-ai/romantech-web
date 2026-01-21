@@ -261,12 +261,27 @@ body {
   }
 }
 
-/* === DISABLE FRAMER MOTION OPACITY ANIMATIONS ON MOBILE === */
-/* This prevents sections from being invisible while waiting for animations */
+/* === FORCE VISIBILITY ON MOBILE === */
 @media (max-width: 768px) {
-  #main-content section * {
+  /* Force all content to be visible */
+  #main-content,
+  #main-content section,
+  #main-content section *,
+  main,
+  main section,
+  main section * {
     opacity: 1 !important;
     transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure sections have proper background */
+  section {
+    background-color: var(--bg-primary);
+  }
+
+  section.bg-bg-void {
+    background-color: var(--bg-void);
   }
 }
 
