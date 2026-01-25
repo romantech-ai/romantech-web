@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AnimatedTextProps {
@@ -11,6 +11,20 @@ interface AnimatedTextProps {
 
 export function AnimatedText({ words, className = "", interval = 3000 }: AnimatedTextProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxWidth, setMaxWidth] = useState<number | null>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
+
+  // Measure all words to find the maximum width
+  useEffect(() => {
+    if (measureRef.current) {
+      const spans = measureRef.current.querySelectorAll('span');
+      let max = 0;
+      spans.forEach(span => {
+        max = Math.max(max, span.offsetWidth);
+      });
+      setMaxWidth(max);
+    }
+  }, [words]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -21,20 +35,37 @@ export function AnimatedText({ words, className = "", interval = 3000 }: Animate
   }, [words.length, interval]);
 
   return (
-    <span className={`relative inline-block ${className}`}>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={currentIndex}
-          initial={{ y: 15, rotateX: -10 }}
-          animate={{ y: 0, rotateX: 0 }}
-          exit={{ y: -15, rotateX: 10 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-block text-gradient"
-        >
-          {words[currentIndex]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+    <>
+      {/* Hidden element to measure all words */}
+      <span
+        ref={measureRef}
+        className="absolute opacity-0 pointer-events-none whitespace-nowrap"
+        aria-hidden="true"
+      >
+        {words.map((word, i) => (
+          <span key={i} className="inline-block text-gradient">{word}</span>
+        ))}
+      </span>
+
+      {/* Visible animated text with fixed width */}
+      <span
+        className={`relative inline-block text-left ${className}`}
+        style={{ minWidth: maxWidth ? `${maxWidth}px` : undefined }}
+      >
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={currentIndex}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-block text-gradient"
+          >
+            {words[currentIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
+    </>
   );
 }
 

@@ -9,25 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Backgrounds
-        'bg-void': '#050508',
-        'bg-primary': '#0a0a10',
-        'bg-elevated': '#0f0f18',
-        'bg-card': '#12121c',
-        'bg-hover': '#1a1a28',
-        // Accents
-        'accent-cyan': '#00D4FF',
-        'accent-cyan-soft': '#00B4D8',
-        'accent-purple': '#8B5CF6',
-        'accent-purple-soft': '#7C3AED',
+        // Backgrounds - warmer tones
+        'bg-void': '#060709',
+        'bg-primary': '#0a0b11',
+        'bg-elevated': '#0f1118',
+        'bg-card': '#13151d',
+        'bg-hover': '#1a1c26',
+        // Accents - optimized
+        'accent-cyan': '#00C8F0',        // Slightly warmer, more sophisticated
+        'accent-cyan-soft': '#00A8CC',
+        'accent-purple': '#9366FF',      // More vibrant and unique
+        'accent-purple-soft': '#7C4DFF',
         // Text
         'text-primary': '#FFFFFF',
         'text-secondary': '#94A3B8',
-        'text-tertiary': '#7C8BA1', // Improved contrast ratio
+        'text-tertiary': '#7C8BA1',
       },
       fontFamily: {
-        display: ['Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
@@ -50,9 +50,10 @@ const config: Config = {
         '2xl': '1.5rem',
       },
       boxShadow: {
-        'glow-cyan': '0 0 30px rgba(0, 212, 255, 0.3)',
-        'glow-cyan-intense': '0 0 50px rgba(0, 212, 255, 0.4)',
-        'glow-purple': '0 0 30px rgba(139, 92, 246, 0.3)',
+        'glow-cyan': '0 0 30px rgba(0, 200, 240, 0.35)',
+        'glow-cyan-intense': '0 0 50px rgba(0, 200, 240, 0.5)',
+        'glow-purple': '0 0 30px rgba(147, 102, 255, 0.35)',
+        'glow-mixed': '0 0 40px rgba(0, 200, 240, 0.25), 0 0 80px rgba(147, 102, 255, 0.15)',
         'elevated': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
       },
@@ -79,8 +80,8 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'accent-gradient': 'linear-gradient(135deg, #00D4FF 0%, #8B5CF6 100%)',
-        'accent-gradient-hover': 'linear-gradient(135deg, #00E5FF 0%, #9D6FFF 100%)',
+        'accent-gradient': 'linear-gradient(135deg, #00C8F0 0%, #9366FF 100%)',
+        'accent-gradient-hover': 'linear-gradient(135deg, #00D8FF 0%, #A080FF 100%)',
       },
     },
   },

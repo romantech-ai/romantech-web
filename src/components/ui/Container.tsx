@@ -46,18 +46,50 @@ export function Section({ children, className, id, gradient = false }: SectionPr
 interface SectionHeaderProps {
   title: string;
   subtitle?: string;
+  eyebrow?: string;
   centered?: boolean;
+  decorated?: boolean;
   className?: string;
 }
 
-export function SectionHeader({ title, subtitle, centered = true, className }: SectionHeaderProps) {
+export function SectionHeader({
+  title,
+  subtitle,
+  eyebrow,
+  centered = true,
+  decorated = false,
+  className,
+}: SectionHeaderProps) {
   return (
     <div className={cn("mb-16", centered && "text-center", className)}>
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-        {title}
-      </h2>
+      {/* Eyebrow text */}
+      {eyebrow && (
+        <p className="text-accent-cyan text-sm font-medium tracking-widest uppercase mb-4">
+          {eyebrow}
+        </p>
+      )}
+
+      {/* Title with optional decorative lines */}
+      {decorated ? (
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="hidden sm:block h-px w-12 bg-gradient-to-r from-transparent to-accent-cyan/50" />
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            {title}
+          </h2>
+          <div className="hidden sm:block h-px w-12 bg-gradient-to-l from-transparent to-accent-purple/50" />
+        </div>
+      ) : (
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          {title}
+        </h2>
+      )}
+
+      {/* Subtitle */}
       {subtitle && (
-        <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+        <p className={cn(
+          "text-text-secondary text-lg",
+          centered && "max-w-2xl mx-auto"
+        )}>
           {subtitle}
         </p>
       )}

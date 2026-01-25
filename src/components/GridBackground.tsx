@@ -1,4 +1,4 @@
-// Simple grid background with CSS animation - no heavy dependencies
+// Premium grid background with organic blob animations
 export function GridBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -7,13 +7,13 @@ export function GridBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%)",
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(147, 102, 255, 0.12) 0%, transparent 50%)",
         }}
       />
 
-      {/* Grid pattern */}
+      {/* Grid pattern - slightly more visible */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
@@ -23,14 +23,29 @@ export function GridBackground() {
         }}
       />
 
-      {/* Animated glow spots */}
+      {/* Organic blob - cyan */}
       <div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[128px] animate-pulse-slow"
-        style={{ background: "rgba(0, 212, 255, 0.1)" }}
+        className="blob absolute top-1/4 left-1/4 w-[500px] h-[500px] blur-[128px]"
+        style={{
+          background: "rgba(0, 200, 240, 0.1)",
+        }}
       />
+
+      {/* Organic blob - purple */}
       <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-[128px] animate-pulse-slow"
-        style={{ background: "rgba(139, 92, 246, 0.1)", animationDelay: "2s" }}
+        className="blob-delayed absolute bottom-1/4 right-1/4 w-[450px] h-[450px] blur-[128px]"
+        style={{
+          background: "rgba(147, 102, 255, 0.1)",
+        }}
+      />
+
+      {/* Subtle accent blob - top right */}
+      <div
+        className="blob absolute -top-20 right-1/3 w-[300px] h-[300px] blur-[100px]"
+        style={{
+          background: "rgba(0, 200, 240, 0.05)",
+          animationDuration: "12s",
+        }}
       />
     </div>
   );

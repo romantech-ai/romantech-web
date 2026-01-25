@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GrainOverlay } from "@/components/GrainOverlay";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const manrope = Manrope({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-manrope",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -202,7 +204,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={manrope.variable}>
       <head>
         <link rel="canonical" href="https://romantech.es" />
         <script
@@ -223,6 +225,7 @@ export default function RootLayout({
           Saltar al contenido principal
         </a>
         {children}
+        <GrainOverlay />
         <SpeedInsights />
       </body>
     </html>

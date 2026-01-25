@@ -1,0 +1,123 @@
+// Configuración para las demos interactivas
+
+export const demoSpecialties = [
+  {
+    id: "fisioterapia",
+    name: "Fisioterapia",
+    icon: "Activity",
+    color: "#00D4FF",
+    clinicName: "Fisio Elite",
+    specialist: "María García",
+    services: ["Traumatología", "Deportiva", "Columna"],
+    price: "40-50€/sesión",
+    suggestions: [
+      "Tengo dolor de espalda",
+      "Quiero pedir cita",
+      "¿Cuánto cuesta una sesión?",
+    ],
+  },
+  {
+    id: "psicologia",
+    name: "Psicología",
+    icon: "Brain",
+    color: "#8B5CF6",
+    clinicName: "Mente Clara",
+    specialist: "Carlos Ruiz",
+    services: ["Ansiedad", "Depresión", "Terapia de pareja"],
+    price: "60-80€/sesión",
+    suggestions: [
+      "Tengo ansiedad",
+      "¿Hacéis terapia online?",
+      "¿Cómo funciona la primera sesión?",
+    ],
+  },
+  {
+    id: "estetica",
+    name: "Estética",
+    icon: "Sparkles",
+    color: "#EC4899",
+    clinicName: "Bella Vita",
+    specialist: "Ana López",
+    services: ["Facial", "Corporal", "Láser"],
+    price: "50-150€/tratamiento",
+    suggestions: [
+      "Quiero información sobre botox",
+      "¿Tienen promociones?",
+      "¿Qué tratamiento me recomendáis?",
+    ],
+  },
+  {
+    id: "podologia",
+    name: "Podología",
+    icon: "Footprints",
+    color: "#14B8A6",
+    clinicName: "Podo Salud",
+    specialist: "Pedro Martín",
+    services: ["Quiropedia", "Plantillas", "Uñas encarnadas"],
+    price: "30-60€/sesión",
+    suggestions: [
+      "Tengo dolor en el pie",
+      "Necesito plantillas personalizadas",
+      "¿Tratáis uñas encarnadas?",
+    ],
+  },
+  {
+    id: "dental",
+    name: "Dental",
+    icon: "Smile",
+    color: "#F59E0B",
+    clinicName: "Sonrisa Perfecta",
+    specialist: "Dr. Javier Sánchez",
+    services: ["Limpieza", "Ortodoncia", "Implantes"],
+    price: "50-200€/tratamiento",
+    suggestions: [
+      "Me duele una muela",
+      "Quiero blanquearme los dientes",
+      "¿Cuánto cuesta una limpieza?",
+    ],
+  },
+]
+
+// Respuestas simuladas del chatbot por especialidad
+export const demoResponses: Record<string, Record<string, string>> = {
+  fisioterapia: {
+    default: "¡Hola! Soy el asistente de Fisio Elite. Tratamos dolor de espalda, lesiones deportivas y problemas de columna. ¿En qué puedo ayudarte?",
+    cita: "¡Perfecto! Para agendar cita, ¿qué día te vendría mejor? Tenemos huecos esta semana por las mañanas y tardes. También puedes llamarnos al 926 XXX XXX.",
+    precio: "Las sesiones cuestan entre 40-50€. La primera consulta incluye valoración completa. ¿Te agendo una cita?",
+    horario: "Estamos abiertos de lunes a viernes de 9:00 a 20:00, y sábados de 10:00 a 14:00.",
+    dolor: "Entiendo que tienes dolor. Lo mejor es hacer una valoración para ver el origen. ¿Cuánto tiempo llevas con estas molestias?",
+    espalda: "El dolor de espalda es una de nuestras especialidades. María García, nuestra especialista en columna, puede ayudarte. ¿Agendamos una valoración?",
+  },
+  psicologia: {
+    default: "Bienvenido/a a Mente Clara. Ofrecemos terapia para ansiedad, depresión y terapia de pareja. ¿En qué puedo ayudarte?",
+    cita: "Para tu primera cita, necesitamos conocerte un poco. ¿Preferirías sesión presencial u online? Ambas funcionan muy bien.",
+    precio: "Las sesiones tienen un coste de 60-80€. La primera es de evaluación para diseñar tu plan de tratamiento.",
+    ansiedad: "Entiendo que estás pasando por un momento difícil. La ansiedad es muy tratable. ¿Te gustaría contarme un poco más o prefieres agendar una primera cita?",
+    online: "Sí, hacemos terapia online por videollamada. Muchos pacientes la prefieren por comodidad. Funciona igual de bien.",
+    horario: "Atendemos de lunes a viernes de 9:00 a 21:00. ¿Qué horario te vendría mejor?",
+  },
+  estetica: {
+    default: "¡Hola! Soy el asistente de Bella Vita. Ofrecemos tratamientos faciales, corporales y láser. ¿Qué tratamiento te interesa?",
+    cita: "¡Genial! ¿Qué tratamiento te interesa? Podemos hacer una valoración gratuita para recomendarte lo mejor.",
+    precio: "Los precios varían según el tratamiento. Por ejemplo: limpieza facial desde 45€, botox desde 200€, láser desde 80€/sesión.",
+    botox: "El botox lo aplicamos en frente, entrecejo y patas de gallo. El precio depende de las zonas. ¿Te agendo una valoración gratuita?",
+    promocion: "¡Sí! Este mes tenemos 20% de descuento en tratamientos faciales. ¿Te interesa saber más?",
+    horario: "Abrimos de lunes a sábado de 10:00 a 20:00. ¿Cuándo te vendría bien pasar?",
+  },
+  podologia: {
+    default: "Hola, soy el asistente de Podo Salud. Tratamos problemas de pies: uñas encarnadas, juanetes, plantillas personalizadas. ¿Cómo puedo ayudarte?",
+    cita: "Perfecto, ¿qué problema tienes en los pies? Así agendo con el especialista adecuado.",
+    precio: "Quiropedia básica: 30€. Plantillas personalizadas: desde 80€. Tratamiento uñas: 25-40€.",
+    dolor: "Si tienes dolor, lo mejor es una valoración cuanto antes. ¿Puedes contarme dónde te duele exactamente?",
+    plantillas: "Las plantillas personalizadas las hacemos con estudio biomecánico de la pisada. El estudio completo cuesta 60€ e incluye el diseño de las plantillas.",
+    unas: "Tratamos uñas encarnadas, hongos y engrosamiento. ¿Cuál es tu caso?",
+  },
+  dental: {
+    default: "¡Hola! Soy el asistente de Sonrisa Perfecta. Ofrecemos limpieza, ortodoncia, implantes y más. ¿En qué te ayudo?",
+    cita: "¡Perfecto! ¿Vienes por revisión rutinaria o tienes alguna urgencia?",
+    precio: "Limpieza: 50€. Empaste: desde 40€. Blanqueamiento: desde 150€. ¿Te interesa algo en concreto?",
+    dolor: "Si tienes dolor, intentamos verte lo antes posible. ¿Puedes describir el dolor? ¿Es constante o solo al morder?",
+    blanqueamiento: "El blanqueamiento lo hacemos con láser en clínica (150€) o con férulas para casa (100€). ¿Cuál prefieres?",
+    limpieza: "La limpieza dental cuesta 50€ e incluye revisión completa. Recomendamos hacerla cada 6-12 meses.",
+  },
+}

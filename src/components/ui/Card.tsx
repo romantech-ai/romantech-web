@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 
 interface CardProps {
-  variant?: "default" | "glass" | "gradient";
+  variant?: "default" | "glass" | "gradient" | "premium";
   hover?: boolean;
   className?: string;
   children: ReactNode;
@@ -37,6 +37,11 @@ function Card({ className, variant = "default", hover = true, children }: CardPr
       border border-white/[0.05]
       ${hover ? "hover:border-accent-cyan/30" : ""}
     `,
+    premium: `
+      bg-bg-card
+      border border-transparent
+      card-premium
+    `,
   };
 
   return (
@@ -45,14 +50,14 @@ function Card({ className, variant = "default", hover = true, children }: CardPr
       whileHover={hover ? { y: -5 } : undefined}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
-      {hover && (
+      {hover && variant !== "premium" && (
         <div
           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100
                       bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-purple/10
                       transition-opacity duration-500 pointer-events-none"
         />
       )}
-      {children}
+      <div className="relative z-10">{children}</div>
     </motion.div>
   );
 }
@@ -70,10 +75,10 @@ interface ServiceCardProps {
 
 export function ServiceCard({ icon, title, description, features, href = "#", ctaText = "Saber más", badge }: ServiceCardProps) {
   return (
-    <Card className="flex flex-col h-full">
+    <Card variant="premium" className="flex flex-col h-full">
       {/* Badge */}
       {badge && (
-        <div className="absolute -top-3 -right-3 z-10">
+        <div className="absolute -top-3 -right-3 z-20">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
                           bg-accent-cyan text-bg-primary shadow-glow-cyan">
             {badge}
@@ -134,7 +139,7 @@ export function ProblemCard({ icon, title, description }: ProblemCardProps) {
   return (
     <div
       className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05]
-                  text-center"
+                  text-center hover:border-accent-cyan/20 transition-colors duration-300"
     >
       <div className="text-text-tertiary mb-4 flex justify-center">
         <div className="w-12 h-12 flex items-center justify-center">{icon}</div>
@@ -155,18 +160,19 @@ interface ProcessCardProps {
 
 export function ProcessCard({ number, title, description, isLast = false }: ProcessCardProps) {
   return (
-    <div className="relative flex flex-col items-center text-center">
+    <div className="relative flex flex-col items-center text-center group">
       {/* Number */}
       <div
         className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20
                     flex items-center justify-center mb-6 border border-white/10
-                    shadow-[0_0_30px_rgba(0,212,255,0.2)]"
+                    shadow-[0_0_30px_rgba(0,200,240,0.2)]
+                    group-hover:shadow-[0_0_40px_rgba(0,200,240,0.3)] transition-shadow duration-300"
       >
         <span className="text-3xl font-bold text-gradient">{number}</span>
       </div>
 
       {/* Content */}
-      <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent-cyan transition-colors duration-300">{title}</h3>
       <p className="text-text-secondary leading-relaxed max-w-xs">{description}</p>
 
       {/* Connector line (hidden on last card) */}

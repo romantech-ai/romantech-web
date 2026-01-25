@@ -6,7 +6,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { forwardRef } from "react";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "glow";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
   withArrow?: boolean;
@@ -36,6 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black
       disabled:opacity-50 disabled:cursor-not-allowed
       inline-flex items-center justify-center gap-2
+      group
     `;
 
     const variants = {
@@ -43,8 +44,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         bg-gradient-to-r from-accent-cyan to-accent-purple
         text-white
         border-white/10
-        shadow-[0_0_30px_rgba(0,212,255,0.3)]
-        hover:shadow-[0_0_50px_rgba(0,212,255,0.5)]
+        shadow-[0_0_30px_rgba(0,200,240,0.3)]
+        hover:shadow-[0_0_50px_rgba(0,200,240,0.5)]
         focus:ring-accent-cyan/50
       `,
       secondary: `
@@ -62,6 +63,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         hover:text-white
         hover:bg-white/5
         focus:ring-white/20
+      `,
+      glow: `
+        bg-gradient-to-r from-accent-cyan to-accent-purple
+        text-white
+        border-white/10
+        shadow-[0_0_30px_rgba(0,200,240,0.4),0_0_60px_rgba(147,102,255,0.2)]
+        hover:shadow-[0_0_50px_rgba(0,200,240,0.6),0_0_80px_rgba(147,102,255,0.3)]
+        focus:ring-accent-cyan/50
+        animate-pulse-slow
       `,
     };
 
@@ -81,11 +91,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
         {...props}
       >
-        {/* Shine effect */}
-        {variant === "primary" && (
+        {/* Shine effect - improved sweep */}
+        {(variant === "primary" || variant === "glow") && (
           <span
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
-                       -translate-x-full group-hover:translate-x-full transition-transform duration-700
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent
+                       -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out
                        pointer-events-none"
           />
         )}
@@ -115,7 +125,7 @@ export { Button };
 // Link Button for navigation
 interface LinkButtonProps {
   href: string;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "glow";
   size?: "sm" | "md" | "lg";
   withArrow?: boolean;
   className?: string;
@@ -148,8 +158,8 @@ export function LinkButton({
       bg-gradient-to-r from-accent-cyan to-accent-purple
       text-white
       border-white/10
-      shadow-[0_0_30px_rgba(0,212,255,0.3)]
-      hover:shadow-[0_0_50px_rgba(0,212,255,0.5)]
+      shadow-[0_0_30px_rgba(0,200,240,0.3)]
+      hover:shadow-[0_0_50px_rgba(0,200,240,0.5)]
       hover:scale-[1.02] hover:-translate-y-0.5
       active:scale-[0.98]
       focus:ring-accent-cyan/50
@@ -172,6 +182,16 @@ export function LinkButton({
       hover:bg-white/5
       focus:ring-white/20
     `,
+    glow: `
+      bg-gradient-to-r from-accent-cyan to-accent-purple
+      text-white
+      border-white/10
+      shadow-[0_0_30px_rgba(0,200,240,0.4),0_0_60px_rgba(147,102,255,0.2)]
+      hover:shadow-[0_0_50px_rgba(0,200,240,0.6),0_0_80px_rgba(147,102,255,0.3)]
+      hover:scale-[1.02] hover:-translate-y-0.5
+      active:scale-[0.98]
+      focus:ring-accent-cyan/50
+    `,
   };
 
   const sizes = {
@@ -190,11 +210,11 @@ export function LinkButton({
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* Shine effect */}
-      {variant === "primary" && (
+      {/* Shine effect - improved sweep */}
+      {(variant === "primary" || variant === "glow") && (
         <span
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
-                     -translate-x-full group-hover:translate-x-full transition-transform duration-700
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent
+                     -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out
                      pointer-events-none"
         />
       )}
