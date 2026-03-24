@@ -9,6 +9,7 @@ import { LinkButton } from "./ui/Button";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
+  { href: "/webs", label: "Webs" },
   { href: "#proceso", label: "Proceso" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#faq", label: "FAQ" },
@@ -20,6 +21,12 @@ export function Navbar() {
 
   // Handle mobile menu navigation with controlled scroll
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only intercept hash links — let real page links navigate normally
+    if (!href.startsWith('#')) {
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     e.preventDefault();
     setIsMobileMenuOpen(false);
 
