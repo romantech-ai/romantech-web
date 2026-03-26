@@ -181,8 +181,8 @@ export default function AutomatizacionPage() {
                 { text: "Hosting, SSL y mantenimiento incluido", included: true },
                 { text: "Chatbot WhatsApp con IA (gestiona citas, dudas, cancelaciones)", included: true },
                 { text: "CRM de pacientes y leads", included: true },
-                { text: "Automatizaciones ilimitadas a medida", included: true },
-                { text: "Integraciones con tu software (gestión clínica, facturación, etc.)", included: true },
+                { text: "Hasta 15 automatizaciones a medida", included: true },
+                { text: "Hasta 3 integraciones con tu software (gestión clínica, facturación, etc.)", included: true },
                 { text: "Consultoría mensual 1h + soporte prioritario", included: true },
               ]}
             />
