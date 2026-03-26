@@ -25,8 +25,8 @@ export default function AvisoLegal() {
               </p>
               <ul className="text-text-secondary space-y-1 mt-3">
                 <li><strong className="text-white">Titular:</strong> Emilio Molina Román</li>
-                <li><strong className="text-white">NIF:</strong> 05710835J</li>
-                <li><strong className="text-white">Domicilio:</strong> Tomelloso, Ciudad Real, España</li>
+                <li><strong className="text-white">NIF:</strong> 06291655M</li>
+                <li><strong className="text-white">Domicilio:</strong> Alcázar de San Juan, Ciudad Real, España</li>
                 <li><strong className="text-white">Email:</strong> emilio@romantech.es</li>
                 <li><strong className="text-white">Teléfono:</strong> +34 664 241 328</li>
                 <li><strong className="text-white">Sitio web:</strong> https://romantech.es</li>
@@ -117,7 +117,7 @@ export default function AvisoLegal() {
               <h2 className="text-xl font-semibold text-white mb-3">8. Legislación aplicable</h2>
               <p className="text-text-secondary leading-relaxed">
                 Este aviso legal se rige por la legislación española. Para cualquier controversia que pudiera derivarse
-                del acceso o uso de este sitio web, las partes se someten a los juzgados y tribunales de Ciudad Real.
+                del acceso o uso de este sitio web, las partes se someten a los juzgados y tribunales de Alcázar de San Juan (Ciudad Real).
               </p>
             </section>
 
