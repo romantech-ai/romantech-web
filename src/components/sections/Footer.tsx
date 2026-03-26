@@ -129,10 +129,16 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 py-6">
-          <p className="text-text-tertiary text-sm text-center">
+        <div className="border-t border-white/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-text-tertiary text-sm">
             © {new Date().getFullYear()} Román Tech. Todos los derechos reservados.
           </p>
+          <a
+            href="/aviso-legal"
+            className="text-text-tertiary hover:text-white text-sm transition-colors duration-300"
+          >
+            Aviso Legal y Privacidad
+          </a>
         </div>
       </Container>
     </footer>
